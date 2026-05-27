@@ -301,6 +301,55 @@ export default function LandingPageBR() {
                 </a>
               </div>
             )}
+
+            {/* SPONSORS SECTION */}
+            <div className="mt-6 rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-center reveal-scale animate-float-slow">
+              <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4">
+                Transmitido e Apoiado por
+              </p>
+              <div className="flex items-center justify-around gap-6 flex-wrap">
+                {/* Canção Nova TV */}
+                <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+                  <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                    {/* Dove & Hand outline */}
+                    <path d="M44 8c-3-2-8-2-12 1-3-2-7-3-10-3C12 6 4 11 4 18c0 5 4 10 9 10 1-.2 1.5-.5 2-.8 3-1.5 5-4.5 5-7.7 0-3.5 2.5-6.5 6-7.5" stroke="#0073C2" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                    <path d="M26 12c3-1.5 7-1.5 10 0 4 2 8 2.5 12 1 1.5 1.5 3 2 4.5 2 2.5-.2 5-1.5 6-3" stroke="#0073C2" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                    <circle cx="24" cy="18" r="1.5" fill="#0073C2" />
+                    <text x="56" y="25" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="800" fill="#0073C2" letterSpacing="0.2">Canção</text>
+                    <text x="56" y="35" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="800" fill="#0073C2" letterSpacing="0.2">Nova</text>
+                    <line x1="56" y1="39" x2="110" y2="39" stroke="#0073C2" strokeWidth="1.5" />
+                    <text x="76" y="46" fontFamily="system-ui, sans-serif" fontSize="8" fontWeight="900" fill="#0073C2" letterSpacing="1">TV</text>
+                  </svg>
+                </div>
+
+                {/* Aparecida */}
+                <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+                  <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                    {/* Gold circle with blue rays Converging */}
+                    <circle cx="20" cy="22" r="17" fill="#F4C234" />
+                    <path d="M20 7c0 0-8 15-9 22M20 7c0 0-4 16-5 23M20 7c0 0 0 17 0 25M20 7c0 0 4 16 5 23M20 7c0 0 8 15 9 22" stroke="#005BAB" strokeWidth="2.2" strokeLinecap="round" />
+                    <text x="44" y="27" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="900" fill="#D49E10" letterSpacing="1.2">APARECIDA</text>
+                  </svg>
+                </div>
+
+                {/* Rede Vida */}
+                <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+                  <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="goldStar" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#FFA600" />
+                        <stop offset="100%" stopColor="#FFE054" />
+                      </linearGradient>
+                    </defs>
+                    {/* Elegant Star */}
+                    <path d="M20 5 L23 15 L32 12 L24 19 L28 29 L20 22 L12 29 L16 19 L8 12 L17 15 Z" fill="url(#goldStar)" />
+                    <text x="40" y="23" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="900" fill="#0074B7" letterSpacing="0.8">REDE</text>
+                    <text x="68" y="23" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="900" fill="#0074B7" letterSpacing="0.8">VIDA</text>
+                    <text x="40" y="32" fontFamily="system-ui, sans-serif" fontSize="6.5" fontWeight="600" fill="#7B7F89" letterSpacing="1">A TV DA FAMÍLIA</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
