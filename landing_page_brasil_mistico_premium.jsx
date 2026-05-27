@@ -350,6 +350,68 @@ export default function LandingPageBR() {
                 </div>
               </div>
             </div>
+
+            {/* VERIFIED SUPPORTERS */}
+            <div className="mt-6 rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-left reveal-scale">
+              <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4 text-center">
+                Apoiadores Recomendados
+              </p>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {/* Frei Gilson */}
+                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                  <img
+                    src="/assets/frei-gilson.jpg"
+                    alt="Frei Gilson"
+                    className="w-10 h-10 rounded-full object-cover border border-[#C6862D]/20 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
+                  />
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[12px] font-extrabold text-[#172033] leading-none flex items-center gap-1 min-w-0">
+                      <span className="truncate">Frei Gilson</span>
+                      <svg className="w-3.5 h-3.5 fill-[#0095F6] verified-badge shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </span>
+                    <span className="text-[9px] text-[#7B7F89] mt-1 font-medium leading-none">Recomendado</span>
+                  </div>
+                </div>
+
+                {/* Padre Fábio de Melo */}
+                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                  <img
+                    src="/assets/fabio-de-melo.jpg"
+                    alt="Padre Fábio de Melo"
+                    className="w-10 h-10 rounded-full object-cover border border-[#C6862D]/20 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
+                  />
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[11px] font-extrabold text-[#172033] leading-none flex items-center gap-1 min-w-0">
+                      <span className="truncate">Pe. Fábio Melo</span>
+                      <svg className="w-3.5 h-3.5 fill-[#0095F6] verified-badge shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </span>
+                    <span className="text-[9px] text-[#7B7F89] mt-1 font-medium leading-none">Recomendado</span>
+                  </div>
+                </div>
+
+                {/* Padre Marcelo Rossi */}
+                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                  <img
+                    src="/assets/marcelo-rossi.jpg"
+                    alt="Padre Marcelo Rossi"
+                    className="w-10 h-10 rounded-full object-cover border border-[#C6862D]/20 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
+                  />
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[11px] font-extrabold text-[#172033] leading-none flex items-center gap-1 min-w-0">
+                      <span className="truncate">Pe. M. Rossi</span>
+                      <svg className="w-3.5 h-3.5 fill-[#0095F6] verified-badge shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      </svg>
+                    </span>
+                    <span className="text-[9px] text-[#7B7F89] mt-1 font-medium leading-none">Recomendado</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
