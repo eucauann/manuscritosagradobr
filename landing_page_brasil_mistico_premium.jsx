@@ -255,12 +255,11 @@ export default function LandingPageBR() {
                     <div className="ml-1 w-0 h-0 border-t-[12px] border-t-transparent border-l-[18px] border-l-white border-b-[12px] border-b-transparent" />
                   </button>
                 ) : (
-                  <div className="absolute inset-0 z-20 bg-black flex items-center justify-center">
-                    {/* Aqui entraria a VSL incorporada do YouTube/Vimeo/Panda, etc. */}
-                    <div className="text-white text-center p-6">
-                      <div className="w-16 h-16 border-4 border-t-[#C6862D] border-white/20 rounded-full animate-spin mx-auto mb-4"></div>
-                      <p className="font-bold text-lg animate-pulse">Assistindo a Revelação Completa...</p>
-                      <p className="text-xs text-gray-400 mt-2">A oferta especial será liberada em instantes.</p>
+                  <div className="absolute inset-0 z-20 bg-black/10 backdrop-blur-[2px] flex items-center justify-center pointer-events-none">
+                    <div className="text-white text-center p-4 bg-[#07192E]/80 rounded-2xl mx-4 shadow-2xl border border-white/10 animate-fadeInUp">
+                      <div className="w-10 h-10 border-4 border-t-[#C6862D] border-white/20 rounded-full animate-spin mx-auto mb-3"></div>
+                      <p className="font-bold text-sm">Revelação Iniciada...</p>
+                      <p className="text-[10px] text-gray-300 mt-1">Aproveite a mensagem até o final.</p>
                     </div>
                   </div>
                 )}
@@ -355,14 +354,11 @@ export default function LandingPageBR() {
           </div>
 
           <div className="reveal-right">
-            <div className="relative group overflow-hidden rounded-[28px]">
-              <div className="absolute inset-0 bg-[#C6862D]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
-              <img
-                src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=1200&auto=format&fit=crop"
-                alt="Floresta mística ao amanhecer"
-                className="rounded-[28px] w-full shadow-2xl border border-[#E7D7BF] transition-all duration-700 group-hover:scale-105 group-hover:shadow-amber-500/10"
-              />
-            </div>
+            <img
+              src="/assets/arcanjo-miguel.jpg"
+              alt="Arcanjo Miguel"
+              className="rounded-[28px] shadow-2xl border border-[#E7D7BF] transition-all duration-500 hover:scale-[1.02] hover:shadow-amber-500/10"
+            />
           </div>
         </div>
       </section>
@@ -429,13 +425,11 @@ export default function LandingPageBR() {
                 </p>
 
                 <div className="flex items-center gap-3 mt-auto pt-4 border-t border-[#F3EBDD]">
-                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white ring-2 ring-[#D8B07A]/30 shrink-0">
-                    <img
-                      src={`https://images.unsplash.com/photo-${index === 0 ? '1494790108377-be9c29b29330' : index === 1 ? '1507003211169-0a1dd7228f2d' : '1438761681033-6461ffad8d80'}?q=80&w=150&auto=format&fit=crop`}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-14 h-14 rounded-full object-cover border-2 border-white ring-2 ring-[#D8B07A]/30"
+                  />
 
                   <div>
                     <div className="text-[#172033] font-bold text-base">
@@ -458,12 +452,12 @@ export default function LandingPageBR() {
 
       {/* OFFER */}
       <section className="py-24 px-6 bg-[#07192E] text-white relative">
-        <div className="max-w-4xl mx-auto text-center border border-[#C6862D]/20 rounded-[40px] p-10 md:p-20 bg-[#0B213B]/80 backdrop-blur-md shadow-2xl reveal-scale">
+        <div className="max-w-4xl mx-auto text-center border border-[#C6862D]/20 rounded-[30px] px-4 py-12 sm:px-10 md:p-20 bg-[#0B213B]/80 backdrop-blur-md shadow-2xl reveal-scale">
           <div className="text-[#D8B07A] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
             Oferta especial
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight font-serif">
+          <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight font-serif">
             Receba Acesso Imediato Agora
           </h2>
 
@@ -471,12 +465,12 @@ export default function LandingPageBR() {
             Clique no botão abaixo e desbloqueie imediatamente o conteúdo completo do Manuscrito Sagrado com desconto especial.
           </p>
 
-          <div className="mb-10">
-            <span className="text-gray-400 line-through text-xl mr-4">
+          <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
+            <span className="text-gray-400 line-through text-lg sm:text-xl">
               R$197
             </span>
 
-            <span className="text-[#F3D19C] text-5xl md:text-6xl font-black gold-shimmer animate-glow-text">
+            <span className="text-[#F3D19C] text-4xl sm:text-5xl md:text-6xl font-black gold-shimmer animate-glow-text whitespace-nowrap">
               R$29,90
             </span>
           </div>
@@ -488,19 +482,17 @@ export default function LandingPageBR() {
               </a>
 
               <div className="mt-12 flex flex-col items-center gap-6">
-                <div className="bg-white rounded-3xl p-6 shadow-2xl border border-[#D8B07A]/20 max-w-md w-full text-left">
+                <div className="bg-white rounded-3xl p-6 shadow-2xl border border-[#D8B07A]/20 max-w-md w-full">
                   <div className="flex items-center justify-center mb-4">
-                    <div className="w-20 h-20 rounded-full border border-[#D8B07A]/30 flex items-center justify-center text-[#C6862D] text-4xl bg-[#F8F4EC]">
-                      🛡
-                    </div>
+                    <img src="/assets/garantia-30-dias.jpg" alt="Garantia 30 Dias" className="h-28 w-28 object-contain transition duration-300 hover:scale-105" />
                   </div>
 
-                  <h3 className="text-[#172033] text-xl font-black mb-2 text-center">
+                  <h3 className="text-[#172033] text-2xl font-black mb-2">
                     Garantia Blindada de 30 Dias
                   </h3>
 
-                  <p className="text-[#5F6572] leading-relaxed text-sm text-center">
-                    Você terá 30 dias completos para acessar o conteúdo. Se não ficar satisfeito, devolvemos 100% do seu dinheiro de forma simples e rápida.
+                  <p className="text-[#5F6572] leading-relaxed text-base">
+                    Você terá 30 dias completos para acessar o conteúdo. Se não ficar satisfeito, devolvemos 100% do seu dinheiro.
                   </p>
                 </div>
 
