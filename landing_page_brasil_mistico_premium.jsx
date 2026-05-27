@@ -26,6 +26,45 @@ const PixLogo = ({ className, fill = '#32BCAD' }) => (
 export default function LandingPageBR() {
   const [showCTA, setShowCTA] = useState(false);
   const [videoStarted, setVideoStarted] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(15 * 60); // 15 minutos em segundos
+
+  useEffect(() => {
+    const STORAGE_KEY = 'oferta_expira_em';
+    const DURACAO = 15 * 60; // 15 minutos
+
+    const agora = Math.floor(Date.now() / 1000);
+    let expiraEm = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+
+    // Se não existe ou já expirou, define nova expiração
+    if (!expiraEm || expiraEm <= agora) {
+      expiraEm = agora + DURACAO;
+      localStorage.setItem(STORAGE_KEY, expiraEm.toString());
+    }
+
+    const calcularRestante = () => {
+      const agora = Math.floor(Date.now() / 1000);
+      const restante = expiraEm - agora;
+      if (restante <= 0) {
+        // Reinicia o timer para manter urgência
+        expiraEm = Math.floor(Date.now() / 1000) + DURACAO;
+        localStorage.setItem(STORAGE_KEY, expiraEm.toString());
+        setTimeLeft(DURACAO);
+      } else {
+        setTimeLeft(restante);
+      }
+    };
+
+    calcularRestante();
+    const interval = setInterval(calcularRestante, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const formatarTempo = (segundos) => {
+    const m = Math.floor(segundos / 60).toString().padStart(2, '0');
+    const s = (segundos % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+  };
+
   const stats = [
     ['37.642', 'Pessoas transformadas'],
     ['120', 'Dias de resultados'],
@@ -84,11 +123,21 @@ export default function LandingPageBR() {
     return () => clearTimeout(timer);
   }, [videoStarted]);
 
+  // Mostrar CTA imediatamente em mobile (sem depender do vídeo)
+  useEffect(() => {
+    if (!videoStarted) {
+      setShowCTA(true);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#F8F4EC] text-[#172033] overflow-x-hidden">
       {/* TOP BAR */}
-      <div className="bg-[#07192E] text-white text-center py-3 text-sm font-semibold tracking-wide">
-        ⚡ OFERTA ESPECIAL ENCERRA EM 04:42
+      <div className="bg-[#07192E] text-white text-center py-3 text-sm font-semibold tracking-wide sticky top-0 z-50">
+        ⚡ OFERTA ESPECIAL ENCERRA EM{' '}
+        <span className="inline-block bg-red-600 text-white font-black px-2 py-0.5 rounded ml-1 tabular-nums animate-pulse">
+          {formatarTempo(timeLeft)}
+        </span>
       </div>
 
       {/* HERO */}
