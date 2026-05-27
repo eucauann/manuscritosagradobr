@@ -85,7 +85,7 @@ export default function LandingPageBR() {
     },
     {
       title: 'Proteção Espiritual',
-      desc: 'Fortaleça sua energia e desenvolva mais clareza espiritual no dia a dia.',
+      desc: 'Fortaleça sua energy e desenvolva mais clareza espiritual no dia a dia.',
     },
     {
       title: 'Transformação Pessoal',
@@ -111,31 +111,44 @@ export default function LandingPageBR() {
     },
   ];
 
+  // Dispara o timer do CTA de 3 minutos quando o vídeo começar
   useEffect(() => {
     let timer;
 
     if (videoStarted) {
       timer = setTimeout(() => {
         setShowCTA(true);
-      }, 180000);
+      }, 180000); // 3 minutos
     }
 
     return () => clearTimeout(timer);
   }, [videoStarted]);
 
-  // Mostrar CTA imediatamente em mobile (sem depender do vídeo)
+  // Observer de Scroll Premium
   useEffect(() => {
-    if (!videoStarted) {
-      setShowCTA(true);
-    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
   return (
     <div className="min-h-screen bg-[#F8F4EC] text-[#172033] overflow-x-hidden">
       {/* TOP BAR */}
-      <div className="bg-[#07192E] text-white text-center py-3 text-sm font-semibold tracking-wide sticky top-0 z-50">
+      <div className="bg-[#07192E] text-white text-center py-3 text-sm font-semibold tracking-wide sticky top-0 z-50 shadow-md">
         ⚡ OFERTA ESPECIAL ENCERRA EM{' '}
-        <span className="inline-block bg-red-600 text-white font-black px-2 py-0.5 rounded ml-1 tabular-nums animate-pulse">
+        <span className="inline-block bg-red-600 text-white font-black px-2 py-0.5 rounded ml-1 tabular-nums animate-countdown">
           {formatarTempo(timeLeft)}
         </span>
       </div>
@@ -147,9 +160,9 @@ export default function LandingPageBR() {
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#D8B07A]/10 rounded-full blur-3xl animate-pulse" />
         </div>
 
-        <div className="relative mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 mb-14">
+        <div className="relative mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 mb-14 animate-fadeInUp">
           <div className="group flex items-center gap-2 rounded-full border border-[#D9C2A0] bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#172033]/80 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-[#C6862D]/40">
-            <span className="text-[#C6862D]">★</span>
+            <span className="text-[#C6862D] animate-pulse">★</span>
             <span>37.642 pessoas já transformaram suas vidas</span>
           </div>
 
@@ -169,14 +182,14 @@ export default function LandingPageBR() {
         </div>
 
         <div className="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-center">
-          <div className="animate-[fadeIn_1s_ease]">
+          <div className="animate-fadeInUp">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#C6862D]">
               Uma oração antiga • um poder real
             </p>
 
             <h1 className="mt-5 font-serif text-[2.4rem] font-bold leading-[1.08] tracking-tight text-[#172033] md:text-[3.2rem] lg:text-[4rem] max-w-2xl">
               A oração esquecida que está transformando a vida{' '}
-              <span className="italic text-[#C6862D]">
+              <span className="italic gold-shimmer font-black">
                 financeira e espiritual
               </span>{' '}
               de milhares de brasileiros
@@ -190,9 +203,9 @@ export default function LandingPageBR() {
               {stats.map((item, index) => (
                 <div
                   key={index}
-                  className="rounded-3xl border border-[#D8B07A]/20 bg-white/80 px-5 py-4 text-center shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-[#C6862D]/40 hover:bg-white"
+                  className={`reveal rounded-3xl border border-[#D8B07A]/20 bg-white/80 px-5 py-4 text-center shadow-sm backdrop-blur transition duration-500 hover:-translate-y-1.5 hover:shadow-2xl hover:border-[#C6862D]/40 hover:bg-white stagger-${index + 1}`}
                 >
-                  <p className="text-2xl font-bold tracking-tight text-[#172033]">
+                  <p className="text-2xl font-bold tracking-tight text-[#172033] gold-shimmer">
                     {item[0]}
                   </p>
 
@@ -204,8 +217,8 @@ export default function LandingPageBR() {
             </div>
 
             {showCTA && (
-              <div className="mt-8 animate-[fadeIn_1s_ease]">
-                <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 rounded-xl bg-gradient-to-b from-[#D39A43] to-[#B77927] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#B77927]/30 transition duration-300 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-2xl animate-pulse">
+              <div className="mt-8 animate-bounceIn">
+                <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-flex items-center gap-3 rounded-xl bg-gradient-to-b from-[#D39A43] to-[#B77927] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#B77927]/30 transition duration-300 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-2xl animate-pulse-scale">
                   <span>QUERO ACESSAR AGORA</span>
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
@@ -220,7 +233,7 @@ export default function LandingPageBR() {
             </p>
           </div>
 
-          <div className="relative animate-[fadeIn_1.2s_ease]">
+          <div className="relative reveal-right">
             <div className="overflow-hidden rounded-[30px] bg-white shadow-[0_30px_80px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(0,0,0,0.16)]">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <div className="absolute inset-0 z-10">
@@ -234,12 +247,23 @@ export default function LandingPageBR() {
                   className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
                 />
 
-                <button
-                  onClick={() => setVideoStarted(true)}
-                  className="absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/30 backdrop-blur-sm ring-2 ring-white/60 transition hover:scale-105 sm:h-20 sm:w-20"
-                >
-                  <div className="ml-1 w-0 h-0 border-t-[12px] border-t-transparent border-l-[18px] border-l-white border-b-[12px] border-b-transparent" />
-                </button>
+                {!videoStarted ? (
+                  <button
+                    onClick={() => setVideoStarted(true)}
+                    className="absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/30 backdrop-blur-sm ring-2 ring-white/60 transition hover:scale-110 sm:h-20 sm:w-20 play-btn-ripple"
+                  >
+                    <div className="ml-1 w-0 h-0 border-t-[12px] border-t-transparent border-l-[18px] border-l-white border-b-[12px] border-b-transparent" />
+                  </button>
+                ) : (
+                  <div className="absolute inset-0 z-20 bg-black flex items-center justify-center">
+                    {/* Aqui entraria a VSL incorporada do YouTube/Vimeo/Panda, etc. */}
+                    <div className="text-white text-center p-6">
+                      <div className="w-16 h-16 border-4 border-t-[#C6862D] border-white/20 rounded-full animate-spin mx-auto mb-4"></div>
+                      <p className="font-bold text-lg animate-pulse">Assistindo a Revelação Completa...</p>
+                      <p className="text-xs text-gray-400 mt-2">A oferta especial será liberada em instantes.</p>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="flex items-center gap-4 px-6 py-5 bg-white">
@@ -265,12 +289,12 @@ export default function LandingPageBR() {
             </div>
 
             {showCTA && (
-              <div className="mt-6 rounded-2xl border border-[#D8B07A]/30 bg-white p-6 text-center shadow-lg backdrop-blur animate-[fadeIn_1s_ease]">
-                <p className="text-sm uppercase tracking-[0.2em] text-[#B77927] font-bold mb-4">
+              <div className="mt-6 rounded-2xl border border-[#D8B07A]/30 bg-white p-6 text-center shadow-lg backdrop-blur animate-bounceIn">
+                <p className="text-sm uppercase tracking-[0.2em] text-[#B77927] font-bold mb-4 animate-pulse">
                   Seu acesso foi liberado
                 </p>
 
-                <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 rounded-xl bg-gradient-to-b from-[#D39A43] to-[#B77927] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#B77927]/30 transition duration-300 hover:brightness-110 hover:shadow-2xl animate-pulse">
+                <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-flex items-center gap-3 rounded-xl bg-gradient-to-b from-[#D39A43] to-[#B77927] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#B77927]/30 transition duration-300 hover:brightness-110 hover:shadow-2xl animate-pulse-scale">
                   <span>QUERO ACESSAR AGORA</span>
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
@@ -283,23 +307,26 @@ export default function LandingPageBR() {
       </section>
 
       {/* PAIN SECTION */}
-      <section className="bg-[#F3EBDD] py-24 px-6">
+      <section className="bg-[#F3EBDD] py-24 px-6 relative overflow-hidden section-glow">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-6 font-bold">
+          <div className="reveal text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-6 font-bold">
             Você se sente assim?
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-black text-[#172033] leading-tight max-w-4xl mx-auto mb-16">
+          <h2 className="reveal text-4xl md:text-6xl font-black text-[#172033] leading-tight max-w-4xl mx-auto mb-16 font-serif">
             Você tenta de tudo... mas sente que nada realmente muda.
           </h2>
 
-          <div className="grid md:grid-cols-4 gap-10 text-center">
+          <div className="grid md:grid-cols-4 gap-8 text-center">
             {pains.map((item, index) => (
-              <div key={index}>
-                <div className="w-16 h-16 rounded-full border border-[#D8B07A] mx-auto mb-5 flex items-center justify-center text-[#C6862D] text-2xl">
+              <div 
+                key={index}
+                className={`reveal rounded-3xl border border-[#D8B07A]/10 bg-white/40 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white/80 hover:border-[#D8B07A]/40 stagger-${index + 1}`}
+              >
+                <div className="w-12 h-12 rounded-full border border-[#D8B07A] mx-auto mb-5 flex items-center justify-center text-[#C6862D] text-xl animate-float-slow">
                   ✦
                 </div>
-                <p className="text-[#5F6572] leading-relaxed">{item}</p>
+                <p className="text-[#5F6572] leading-relaxed text-sm">{item}</p>
               </div>
             ))}
           </div>
@@ -307,44 +334,47 @@ export default function LandingPageBR() {
       </section>
 
       {/* MYSTERY SECTION */}
-      <section className="py-24 px-6 bg-[#F8F4EC]">
+      <section className="py-24 px-6 bg-[#F8F4EC] relative">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="reveal-left">
             <div className="text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
               O segredo escondido
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-black leading-tight mb-8 text-[#172033]">
+            <h2 className="text-4xl md:text-5xl font-black leading-tight mb-8 text-[#172033] font-serif">
               Um Conhecimento Que Ficou Oculto Por Décadas
             </h2>
 
-            <p className="text-[#5F6572] text-lg leading-relaxed mb-6">
-              Este material reúne ensinamentos raros que foram preservados ao longo do tempo.
+            <p className="text-[#5F6572] text-base leading-relaxed mb-6">
+              Este material reúne ensinamentos raros que foram preservados ao longo do tempo para destravar caminhos e restabelecer a harmonia.
             </p>
 
-            <p className="text-[#6B7280] text-lg leading-relaxed">
-              Muitos afirmam perceber mudanças profundas em prosperidade e clareza espiritual.
+            <p className="text-[#6B7280] text-base leading-relaxed">
+              Muitos afirmam perceber mudanças profundas em prosperidade e clareza espiritual ao colocar estas palavras ancestrais em prática.
             </p>
           </div>
 
-          <div>
-            <img
-              src="/assets/arcanjo-miguel.jpg"
-              alt="Arcanjo Miguel"
-              className="rounded-[28px] shadow-2xl border border-[#E7D7BF] transition-all duration-500 hover:scale-[1.02] hover:shadow-amber-500/10"
-            />
+          <div className="reveal-right">
+            <div className="relative group overflow-hidden rounded-[28px]">
+              <div className="absolute inset-0 bg-[#C6862D]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
+              <img
+                src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=1200&auto=format&fit=crop"
+                alt="Floresta mística ao amanhecer"
+                className="rounded-[28px] w-full shadow-2xl border border-[#E7D7BF] transition-all duration-700 group-hover:scale-105 group-hover:shadow-amber-500/10"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* BENEFITS */}
-      <section className="py-24 px-6 bg-[#07192E] text-white">
+      <section className="py-24 px-6 bg-[#07192E] text-white relative">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="text-[#D8B07A] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
+          <div className="reveal text-[#D8B07A] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
             O que você vai descobrir
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-black mb-16">
+          <h2 className="reveal text-4xl md:text-5xl font-black mb-16 font-serif">
             Benefícios Que Estão Impactando Milhares
           </h2>
 
@@ -352,9 +382,9 @@ export default function LandingPageBR() {
             {benefits.map((item, index) => (
               <div
                 key={index}
-                className="bg-[#0E2744] border border-[#C6862D]/20 rounded-3xl p-10"
+                className={`reveal-scale bg-[#0E2744]/60 border border-[#C6862D]/20 rounded-3xl p-10 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:bg-[#0E2744] hover:border-[#C6862D]/50 stagger-${index + 1}`}
               >
-                <div className="w-16 h-16 rounded-2xl bg-[#C6862D] text-white flex items-center justify-center text-3xl font-black mx-auto mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-[#C6862D]/20 border border-[#C6862D]/30 text-[#F3D19C] flex items-center justify-center text-3xl font-black mx-auto mb-6 animate-float">
                   ✦
                 </div>
 
@@ -362,7 +392,7 @@ export default function LandingPageBR() {
                   {item.title}
                 </h3>
 
-                <p className="text-[#CBD5E1] leading-relaxed">
+                <p className="text-[#CBD5E1] leading-relaxed text-sm">
                   {item.desc}
                 </p>
               </div>
@@ -372,13 +402,13 @@ export default function LandingPageBR() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24 px-6 bg-[#F8F4EC]">
+      <section className="py-24 px-6 bg-[#F8F4EC] relative">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
+          <div className="reveal text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
             Relatos reais
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-black mb-16 text-[#172033]">
+          <h2 className="reveal text-4xl md:text-5xl font-black mb-16 text-[#172033] font-serif">
             Pessoas Que Aplicaram e Viram Resultados
           </h2>
 
@@ -386,7 +416,7 @@ export default function LandingPageBR() {
             {testimonials.map((item, index) => (
               <div
                 key={index}
-                className="bg-white/90 border border-[#E7D7BF] rounded-3xl p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#D8B07A]/40 backdrop-blur"
+                className={`reveal bg-white/90 border border-[#E7D7BF] rounded-3xl p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-[#D8B07A]/50 backdrop-blur stagger-${index + 1}`}
               >
                 <div className="flex items-center gap-1 text-[#C6862D] text-lg mb-6">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -394,16 +424,18 @@ export default function LandingPageBR() {
                   ))}
                 </div>
 
-                <p className="text-[#5F6572] text-[15px] leading-relaxed mb-8 italic">
+                <p className="text-[#5F6572] text-[14px] leading-relaxed mb-8 italic">
                   {item.text}
                 </p>
 
                 <div className="flex items-center gap-3 mt-auto pt-4 border-t border-[#F3EBDD]">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-white ring-2 ring-[#D8B07A]/30"
-                  />
+                  <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-white ring-2 ring-[#D8B07A]/30 shrink-0">
+                    <img
+                      src={`https://images.unsplash.com/photo-${index === 0 ? '1494790108377-be9c29b29330' : index === 1 ? '1507003211169-0a1dd7228f2d' : '1438761681033-6461ffad8d80'}?q=80&w=150&auto=format&fit=crop`}
+                      alt={item.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
                   <div>
                     <div className="text-[#172033] font-bold text-base">
@@ -425,77 +457,96 @@ export default function LandingPageBR() {
       </section>
 
       {/* OFFER */}
-      <section className="py-24 px-6 bg-[#07192E] text-white">
-        <div className="max-w-5xl mx-auto text-center border border-[#C6862D]/20 rounded-[40px] p-12 md:p-20 bg-[#0B213B]">
+      <section className="py-24 px-6 bg-[#07192E] text-white relative">
+        <div className="max-w-4xl mx-auto text-center border border-[#C6862D]/20 rounded-[40px] p-10 md:p-20 bg-[#0B213B]/80 backdrop-blur-md shadow-2xl reveal-scale">
           <div className="text-[#D8B07A] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
             Oferta especial
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight font-serif">
             Receba Acesso Imediato Agora
           </h2>
 
-          <p className="text-[#CBD5E1] text-xl leading-relaxed mb-10 max-w-3xl mx-auto">
-            Clique no botão abaixo e desbloqueie imediatamente o conteúdo completo.
+          <p className="text-[#CBD5E1] text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+            Clique no botão abaixo e desbloqueie imediatamente o conteúdo completo do Manuscrito Sagrado com desconto especial.
           </p>
 
           <div className="mb-10">
-            <span className="text-gray-400 line-through text-2xl mr-4">
+            <span className="text-gray-400 line-through text-xl mr-4">
               R$197
             </span>
 
-            <span className="text-[#F3D19C] text-6xl font-black">
+            <span className="text-[#F3D19C] text-5xl md:text-6xl font-black gold-shimmer animate-glow-text">
               R$29,90
             </span>
           </div>
 
-          <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#C6862D] hover:bg-[#B77927] text-white font-black text-2xl px-12 py-6 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105">
-            LIBERAR MEU ACESSO
-          </a>
+          {showCTA ? (
+            <div className="animate-bounceIn">
+              <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-block bg-[#C6862D] hover:bg-[#B77927] text-white font-black text-2xl px-12 py-6 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105 animate-pulse-scale">
+                LIBERAR MEU ACESSO
+              </a>
 
-          <div className="mt-10 flex flex-col items-center gap-6">
-            <div className="bg-white rounded-3xl p-6 shadow-2xl border border-[#D8B07A]/20 max-w-md w-full">
-              <div className="flex items-center justify-center mb-4">
-                <img src="/assets/garantia-30-dias.jpg" alt="Garantia 30 Dias" className="h-28 w-28 object-contain transition duration-300 hover:scale-105" />
+              <div className="mt-12 flex flex-col items-center gap-6">
+                <div className="bg-white rounded-3xl p-6 shadow-2xl border border-[#D8B07A]/20 max-w-md w-full text-left">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="w-20 h-20 rounded-full border border-[#D8B07A]/30 flex items-center justify-center text-[#C6862D] text-4xl bg-[#F8F4EC]">
+                      🛡
+                    </div>
+                  </div>
+
+                  <h3 className="text-[#172033] text-xl font-black mb-2 text-center">
+                    Garantia Blindada de 30 Dias
+                  </h3>
+
+                  <p className="text-[#5F6572] leading-relaxed text-sm text-center">
+                    Você terá 30 dias completos para acessar o conteúdo. Se não ficar satisfeito, devolvemos 100% do seu dinheiro de forma simples e rápida.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
+                  <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
+                    <MastercardLogo className="h-full w-full object-contain" />
+                  </div>
+                  <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
+                    <VisaLogo className="h-full w-full object-contain" fill="#1A1F71" />
+                  </div>
+                  <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
+                    <PixLogo className="h-full w-full object-contain" fill="#32BCAD" />
+                  </div>
+                </div>
+
+                <div className="text-[#94A3B8] text-sm">
+                  Pagamento 100% seguro • Garantia de 30 dias
+                </div>
               </div>
-
-              <h3 className="text-[#172033] text-2xl font-black mb-2">
-                Garantia Blindada de 30 Dias
-              </h3>
-
-              <p className="text-[#5F6572] leading-relaxed text-base">
-                Você terá 30 dias completos para acessar o conteúdo. Se não ficar satisfeito, devolvemos 100% do seu dinheiro.
+            </div>
+          ) : (
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-lg mx-auto transition-all duration-300">
+              <div className="flex justify-center mb-4 text-[#D8B07A] text-3xl animate-pulse">
+                🔒
+              </div>
+              <h3 className="text-[#F3D19C] text-lg font-bold">Oferta Promocional Reservada</h3>
+              <p className="text-gray-300 text-sm mt-2 leading-relaxed">
+                Assista ao vídeo explicativo acima. O link de liberação com desconto será disponibilizado automaticamente em instantes aqui nesta seção.
               </p>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
-              <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
-                <MastercardLogo className="h-full w-full object-contain" />
-              </div>
-              <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
-                <VisaLogo className="h-full w-full object-contain" fill="#1A1F71" />
-              </div>
-              <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
-                <PixLogo className="h-full w-full object-contain" fill="#32BCAD" />
+              <div className="mt-4 w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                <div className="h-full countdown-bar rounded-full" style={{ width: '60%' }}></div>
               </div>
             </div>
-
-            <div className="text-[#94A3B8] text-sm">
-              Pagamento 100% seguro • Garantia de 30 dias
-            </div>
-          </div>
+          )}
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-[#1E293B] py-16 px-6 bg-[#061321] text-[#CBD5E1]">
+      <footer className="border-t border-[#1E293B]/60 py-16 px-6 bg-[#061321] text-[#CBD5E1] relative">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 items-start">
           <div>
-            <div className="text-2xl font-black text-white mb-4">
+            <div className="text-2xl font-black text-white mb-4 font-serif tracking-wide">
               Manuscrito Sagrado
             </div>
 
-            <p className="leading-relaxed text-[#94A3B8]">
+            <p className="leading-relaxed text-sm text-[#94A3B8]">
               Um projeto desenvolvido para ajudar pessoas a encontrarem prosperidade, clareza espiritual e transformação pessoal.
             </p>
           </div>
@@ -523,20 +574,21 @@ export default function LandingPageBR() {
               Suporte
             </div>
 
-            <p className="text-[#94A3B8] leading-relaxed">
+            <p className="text-[#94A3B8] text-sm leading-relaxed">
               suporte@manusescritosagrado.com
             </p>
 
-            <p className="mt-4 text-sm text-[#64748B]">
+            <p className="mt-4 text-xs text-[#64748B]">
               Atendimento em horário comercial.
             </p>
           </div>
         </div>
 
-        <div className="border-t border-[#1E293B] mt-12 pt-8 text-center text-sm text-[#64748B]">
+        <div className="border-t border-[#1E293B]/40 mt-12 pt-8 text-center text-sm text-[#64748B]">
           © 2026 Manuscrito Sagrado • Todos os direitos reservados.
         </div>
       </footer>
     </div>
   );
 }
+
