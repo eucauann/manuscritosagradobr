@@ -23,9 +23,13 @@ const PixLogo = ({ className, fill = '#32BCAD' }) => (
   </svg>
 );
 
+// ====== CONFIGURAÇÃO DO VÍDEO ======
+// Troque pelo ID do seu vídeo do YouTube
+const VIDEO_ID = 'dQw4w9WgXcQ'; // <-- coloque aqui o ID do YouTube (ex: "dQw4w9WgXcQ")
+
 export default function LandingPageBR() {
   const [showCTA, setShowCTA] = useState(false);
-  const [videoStarted, setVideoStarted] = useState(false);
+  const [videoStarted, setVideoStarted] = useState(true); // Começa tocando automaticamente
   const [timeLeft, setTimeLeft] = useState(15 * 60); // 15 minutos em segundos
 
   useEffect(() => {
@@ -233,57 +237,71 @@ export default function LandingPageBR() {
             </p>
           </div>
 
-          <div className="relative reveal-right">
-            <div className="overflow-hidden rounded-[30px] bg-white shadow-[0_30px_80px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(0,0,0,0.16)]">
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <div className="absolute inset-0 z-10">
-                  <div className="absolute -left-10 top-10 h-40 w-40 rounded-full bg-[#F5D18A]/40 blur-3xl animate-pulse" />
-                  <div className="absolute -right-10 bottom-10 h-32 w-32 rounded-full bg-white/40 blur-3xl animate-pulse" />
-                </div>
+          {/* VIDEO PLAYER SECTION - TikTok 9:16 style */}
+          <div className="relative reveal-right flex flex-col items-center">
 
-                <img
-                  src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1400&auto=format&fit=crop"
-                  alt="Mulher meditando"
-                  className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
-                />
+            {/* Player Container */}
+            <div className="video-tiktok-wrapper">
+              <div className="video-tiktok-card">
 
-                {!videoStarted ? (
-                  <button
-                    onClick={() => setVideoStarted(true)}
-                    className="absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/30 backdrop-blur-sm ring-2 ring-white/60 transition hover:scale-110 sm:h-20 sm:w-20 play-btn-ripple"
-                  >
-                    <div className="ml-1 w-0 h-0 border-t-[12px] border-t-transparent border-l-[18px] border-l-white border-b-[12px] border-b-transparent" />
-                  </button>
-                ) : (
-                  <div className="absolute inset-0 z-20 bg-black/10 backdrop-blur-[2px] flex items-center justify-center pointer-events-none">
-                    <div className="text-white text-center p-4 bg-[#07192E]/80 rounded-2xl mx-4 shadow-2xl border border-white/10 animate-fadeInUp">
-                      <div className="w-10 h-10 border-4 border-t-[#C6862D] border-white/20 rounded-full animate-spin mx-auto mb-3"></div>
-                      <p className="font-bold text-sm">Revelação Iniciada...</p>
-                      <p className="text-[10px] text-gray-300 mt-1">Aproveite a mensagem até o final.</p>
-                    </div>
-                  </div>
-                )}
-              </div>
+                {/* Glow decorativo */}
+                <div className="absolute -inset-1 rounded-[32px] bg-gradient-to-b from-[#C6862D]/30 via-transparent to-[#07192E]/20 blur-xl pointer-events-none z-0" />
 
-              <div className="flex items-center gap-4 px-6 py-5 bg-white">
-                <div className="flex -space-x-3 shrink-0">
-                  {[
-                    'https://randomuser.me/api/portraits/women/65.jpg',
-                    'https://randomuser.me/api/portraits/men/22.jpg',
-                    'https://randomuser.me/api/portraits/women/45.jpg',
-                  ].map((img, index) => (
-                    <img
-                      key={index}
-                      src={img}
-                      alt="avatar"
-                      className="h-10 w-10 rounded-full border-2 border-white object-cover"
+                {/* Área do vídeo 9:16 */}
+                <div className="video-tiktok-screen">
+
+                  {!videoStarted ? (
+                    /* Botão fallback se pausado ou fechado */
+                    <button
+                      id="video-play-btn"
+                      onClick={() => setVideoStarted(true)}
+                      className="video-thumbnail-btn"
+                      aria-label="Assistir ao vídeo"
+                    >
+                      <img
+                        src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop"
+                        alt="Thumbnail"
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                        <div className="play-btn-ripple flex h-20 w-20 items-center justify-center rounded-full bg-white/25 backdrop-blur-md">
+                          <div className="ml-2 w-0 h-0 border-t-[16px] border-t-transparent border-l-[26px] border-l-white border-b-[16px] border-b-transparent" />
+                        </div>
+                      </div>
+                    </button>
+                  ) : (
+                    /* IFRAME COM AUTOPLAY E SOM (Nota: Alguns browsers exigem mute=1 para autoplay. Usamos autoplay=1 e playsinline=1) */
+                    <iframe
+                      id="video-iframe"
+                      className="absolute inset-0 w-full h-full animate-fadeInUp"
+                      src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&mute=1&controls=1&rel=0&modestbranding=1&playsinline=1`}
+                      title="Manuscrito Sagrado - Vídeo"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
                     />
-                  ))}
+                  )}
                 </div>
 
-                <p className="text-sm leading-snug text-[#6B7280]">
-                  Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
-                </p>
+                {/* Rodapé do card com avatares */}
+                <div className="flex items-center gap-4 px-5 py-4 bg-white rounded-b-[28px]">
+                  <div className="flex -space-x-3 shrink-0">
+                    {[
+                      'https://randomuser.me/api/portraits/women/65.jpg',
+                      'https://randomuser.me/api/portraits/men/22.jpg',
+                      'https://randomuser.me/api/portraits/women/45.jpg',
+                    ].map((img, index) => (
+                      <img
+                        key={index}
+                        src={img}
+                        alt="avatar"
+                        className="h-9 w-9 rounded-full border-2 border-white object-cover"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-sm leading-snug text-[#6B7280]">
+                    Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
+                  </p>
+                </div>
               </div>
             </div>
 
