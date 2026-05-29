@@ -254,40 +254,18 @@ export default function LandingPageBR() {
 
           <div className="relative reveal-right">
             <div className="vsl-container">
-              <div className="vsl-card">
+              <div className="vsl-card vsl-card--clean">
                 <div className="vsl-aspect">
-                  <div className="absolute inset-0 z-10 pointer-events-none">
-                    <div className="absolute -left-10 top-10 h-40 w-40 rounded-full bg-[#F5D18A]/40 blur-3xl animate-pulse" />
-                    <div className="absolute -right-10 bottom-10 h-32 w-32 rounded-full bg-white/40 blur-3xl animate-pulse" />
-                  </div>
-
                   <vturb-smartplayer
                     id="vid-6a18ecf65045d459043ae0c1"
                     style={{ display: 'block', width: '100%', height: '100%' }}
                   ></vturb-smartplayer>
                 </div>
-
-                <div className="flex items-center gap-4 px-6 py-5 bg-white">
-                  <div className="flex -space-x-3 shrink-0">
-                    {[
-                      'https://randomuser.me/api/portraits/women/65.jpg',
-                      'https://randomuser.me/api/portraits/men/22.jpg',
-                      'https://randomuser.me/api/portraits/women/45.jpg',
-                    ].map((img, index) => (
-                      <img
-                        key={index}
-                        src={img}
-                        alt="avatar"
-                        className="h-10 w-10 rounded-full border-2 border-white object-cover"
-                      />
-                    ))}
-                  </div>
-
-                  <p className="text-sm leading-snug text-[#6B7280]">
-                    Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
-                  </p>
-                </div>
               </div>
+
+              <p className="text-sm leading-snug text-[#6B7280] mt-4 text-center">
+                Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
+              </p>
             </div>
 
             {showCTA && (

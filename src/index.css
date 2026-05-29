@@ -346,6 +346,15 @@ html {
   border: 1px solid rgba(0,0,0,0.04);
 }
 
+/* Clean variant: remove fake frame, shadows, border and clipping */
+.vsl-card--clean {
+  overflow: visible !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
 .vsl-aspect {
   width: 100%;
   /* Use modern aspect-ratio; fallback not required for modern browsers */
@@ -364,6 +373,18 @@ html {
   height: 100% !important;
   display: block !important;
   object-fit: contain !important;
+}
+
+/* Defensive: prevent any transform/scale applied by embedded player wrappers */
+.vsl-aspect vturb-smartplayer,
+.vsl-aspect vturb-smartplayer *,
+.vsl-aspect iframe,
+.vsl-aspect iframe * {
+  transform: none !important;
+  -webkit-transform: none !important;
+  scale: 1 !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
 }
 
 /* Ensure the player wrapper cannot force a fixed height */
