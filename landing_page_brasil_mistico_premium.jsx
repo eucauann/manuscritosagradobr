@@ -284,7 +284,7 @@ export default function LandingPageBR() {
             )}
 
             {/* SPONSORS SECTION */}
-            <div className="mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-center reveal-scale animate-float-slow">
+            <div className="sponsors-block mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-center reveal-scale animate-float-slow">
               <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4">
                 Transmitido e Apoiado por
               </p>
@@ -333,7 +333,7 @@ export default function LandingPageBR() {
             </div>
 
             {/* VERIFIED SUPPORTERS */}
-            <div className="mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-left reveal-scale">
+            <div className="sponsors-block mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-left reveal-scale">
               <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4 text-center">
                 Apoiadores Recomendados
               </p>

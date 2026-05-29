@@ -355,6 +355,18 @@ html {
   border: none !important;
 }
 
+/* Prevent decorations or player wrappers from overflowing and covering following blocks */
+.vsl-card--clean .vsl-aspect {
+  overflow: hidden !important;
+  position: relative;
+}
+
+/* Sponsors should appear above decorative overlays and be fully visible below the VSL */
+.sponsors-block {
+  position: relative;
+  z-index: 40;
+}
+
 .vsl-aspect {
   width: 100%;
   /* Use modern aspect-ratio; fallback not required for modern browsers */
