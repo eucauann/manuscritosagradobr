@@ -124,16 +124,20 @@ export default function LandingPageBR() {
     return () => clearTimeout(timer);
   }, [videoStarted]);
 
-  // Carrega o script do player VSL quando o vídeo começar
+  // Carrega o script do player VSL no mount e marca `videoStarted` quando pronto
   useEffect(() => {
-    if (!videoStarted) return;
-    if (document.getElementById('vturb-player-script')) return;
+    if (document.getElementById('vturb-player-script')) {
+      setVideoStarted(true);
+      return;
+    }
+
     const s = document.createElement('script');
     s.id = 'vturb-player-script';
     s.src = 'https://scripts.converteai.net/ddcd638e-6f98-44c3-b326-5ddb6879caf1/players/6a18ecf65045d459043ae0c1/v4/player.js';
     s.async = true;
+    s.onload = () => setVideoStarted(true);
     document.head.appendChild(s);
-  }, [videoStarted]);
+  }, []);
 
   // Observer de Scroll Premium
   useEffect(() => {
@@ -252,26 +256,9 @@ export default function LandingPageBR() {
                   <div className="absolute -right-10 bottom-10 h-32 w-32 rounded-full bg-white/40 blur-3xl animate-pulse" />
                 </div>
 
-                {!videoStarted ? (
-                  <>
-                    <img
-                      src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1400&auto=format&fit=crop"
-                      alt="Mulher meditando"
-                      className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
-                    />
-
-                    <button
-                      onClick={() => setVideoStarted(true)}
-                      className="absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/30 backdrop-blur-sm ring-2 ring-white/60 transition hover:scale-110 sm:h-20 sm:w-20 play-btn-ripple"
-                    >
-                      <div className="ml-1 w-0 h-0 border-t-[12px] border-t-transparent border-l-[18px] border-l-white border-b-[12px] border-b-transparent" />
-                    </button>
-                  </>
-                ) : (
-                  <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
-                    <vturb-smartplayer id="vid-6a18ecf65045d459043ae0c1" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></vturb-smartplayer>
-                  </div>
-                )}
+                <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+                  <vturb-smartplayer id="vid-6a18ecf65045d459043ae0c1" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></vturb-smartplayer>
+                </div>
               </div>
 
               <div className="flex items-center gap-4 px-6 py-5 bg-white">
