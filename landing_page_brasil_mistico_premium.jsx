@@ -27,7 +27,7 @@ const PixLogo = ({ className, fill = '#32BCAD' }) => (
 const VIDEO_ID = 'dQw4w9WgXcQ';
 
 export default function LandingPageBR() {
-  const [showCTA, setShowCTA] = useState(false);
+  const [showCTA, setShowCTA] = useState(true);
   const [videoStarted, setVideoStarted] = useState(true);
   const [timeLeft, setTimeLeft] = useState(15 * 60);
 
