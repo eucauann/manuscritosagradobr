@@ -3,23 +3,23 @@ import { useEffect, useState } from 'react';
 const MastercardLogo = ({ className }) => (
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className={className}>
     <title>Mastercard</title>
-    <path d="M11.343 18.031c.058.049.12.098.181.146-1.177.783-2.59 1.238-4.107 1.238C3.32 19.416 0 16.096 0 12c0-4.095 3.32-7.416 7.416-7.416 1.518 0 2.931.456 4.105 1.238-.06.051-.12.098-.165.15C9.6 7.489 8.595 9.688 8.595 12c0 2.311 1.001 4.51 2.748 6.031z" fill="#EB001B" />
-    <path d="M12.657 18.031c-.058.049-.12.098-.181.146 1.177.783 2.59 1.238 4.107 1.238C20.68 19.416 24 16.096 24 12c0-4.095-3.32-7.416-7.416-7.416-1.518 0-2.931.456-4.105 1.238.06.051.12.098.165.15C14.4 7.489 15.405 9.688 15.405 12c0 2.31-1.001 4.51-2.748 6.031z" fill="#F79E1B" />
-    <path d="M12 6.174c-.096.075-.189.15-.28.231C10.156 7.764 9.169 9.765 9.169 12c0 2.236.987 4.236 2.551 5.595.09.08.185.158.28.232.096-.074.189-.152.28-.232 1.563-1.359 2.551-3.359 2.551-5.595 0-2.235-.987-4.236-2.551-5.595-.09-.08-.184-.156-.28-.231z" fill="#FF5F00" />
+    <path d="M11.343 18.031c.058.049.12.098.181.146-1.177.783-2.59 1.238-4.107 1.238C3.32 19.416 0 16.096 0 12c0-4.095 3.32-7.416 7.416-7.416 1.518 0 2.931.456 4.105 1.238-.06.051-.12.098-.165.15C9[...]
+    <path d="M12.657 18.031c-.058.049-.12.098-.181.146 1.177.783 2.59 1.238 4.107 1.238C20.68 19.416 24 16.096 24 12c0-4.095-3.32-7.416-7.416-7.416-1.518 0-2.931.456-4.105 1.238.06.051.12.098.165.1[...]
+    <path d="M12 6.174c-.096.075-.189.15-.28.231C10.156 7.764 9.169 9.765 9.169 12c0 2.236.987 4.236 2.551 5.595.09.08.185.158.28.232.096-.074.189-.152.28-.232 1.563-1.359 2.551-3.359 2.551-5.595 0[...]
   </svg>
 );
 
 const VisaLogo = ({ className, fill = '#1A1F71' }) => (
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className={className} fill={fill}>
     <title>Visa</title>
-    <path d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.979-2.736-2.088-2.717-2.972.006-.269.262-.555.822-.628a3.66 3.66 0 011.913.336l.34-1.59a5.207 5.207 0 00-1.814-.333c-1.917 0-3.266 1.02-3.278 2.479-.012 1.079.963 1.68 1.698 2.04.756.367 1.01.603 1.006.931-.005.504-.602.725-1.16.734-.975.015-1.54-.263-1.992-.473l-.351 1.642c.453.208 1.289.39 2.156.398 2.037 0 3.37-1.006 3.377-2.564m5.061 2.447H24l-1.565-7.496h-1.656a.883.883 0 00-.826.55l-2.909 6.946h2.036l.405-1.12h2.488zm-2.163-2.656l1.02-2.815.588 2.815zm-8.16-4.84l-1.603 7.496H8.34l1.605-7.496z" />
+    <path d="M9.112 8.262L5.97 15.758H3.92L2.374 9.775c-.094-.368-.175-.503-.461-.658C1.447 8.864.677 8.627 0 8.479l.046-.217h3.3a.904.904 0 01.894.764l.817 4.338 2.018-5.102zm8.033 5.049c.008-1.9[...]
   </svg>
 );
 
 const PixLogo = ({ className, fill = '#32BCAD' }) => (
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className={className} fill={fill}>
     <title>Pix</title>
-    <path d="M5.283 18.36a3.505 3.505 0 0 0 2.493-1.032l3.6-3.6a.684.684 0 0 1 .946 0l3.613 3.613a3.504 3.504 0 0 0 2.493 1.032h.71l-4.56 4.56a3.647 3.647 0 0 1-5.156 0L4.85 18.36ZM18.428 5.627a3.505 3.505 0 0 0-2.493 1.032l-3.613 3.614a.67.67 0 0 1-.946 0l-3.6-3.6A3.505 3.505 0 0 0 5.283 5.64h-.434l4.573-4.572a3.646 3.646 0 0 1 5.156 0l4.559 4.559ZM1.068 9.422 3.79 6.699h1.492a2.483 2.483 0 0 1 1.744.722l3.6 3.6a1.73 1.73 0 0 0 2.443 0l3.614-3.613a2.482 2.482 0 0 1 1.744-.723h1.767l2.737 2.737a3.646 3.646 0 0 1 0 5.156l-2.736 2.736h-1.768a2.482 2.482 0 0 1-1.744-.722l-3.613-3.613a1.77 1.77 0 0 0-2.444 0l-3.6 3.6a2.483 2.483 0 0 1-1.744.722H3.791l-2.723-2.723a3.646 3.646 0 0 1 0-5.156" />
+    <path d="M5.283 18.36a3.505 3.505 0 0 0 2.493-1.032l3.6-3.6a.684.684 0 0 1 .946 0l3.613 3.613a3.504 3.504 0 0 0 2.493 1.032h.71l-4.56 4.56a3.647 3.647 0 0 1-5.156 0L4.85 18.36ZM18.428 5.627a3.[...]
   </svg>
 );
 
@@ -101,17 +101,17 @@ export default function LandingPageBR() {
     {
       name: 'Mariana Costa',
       image: '/assets/mariana.jpg',
-      text: '“Depois que comecei a fazer a oração, minha vida financeira mudou completamente. Em menos de 2 semanas consegui fechar contratos que eu tentava há meses.”',
+      text: '"Depois que comecei a fazer a oração, minha vida financeira mudou completamente. Em menos de 2 semanas consegui fechar contratos que eu tentava há meses."',
     },
     {
       name: 'Carlos Eduardo',
       image: '/assets/carlos.jpg',
-      text: '“Achei que era só mais uma promessa… mas senti paz, clareza e uma transformação absurda dentro da minha casa.”',
+      text: '"Achei que era só mais uma promessa… mas senti paz, clareza e uma transformação absurda dentro da minha casa."',
     },
     {
       name: 'Fernanda Lima',
       image: '/assets/fernanda.jpg',
-      text: '“Hoje eu faço essa oração todos os dias. Minha ansiedade diminuiu e comecei a prosperar novamente.”',
+      text: '"Hoje eu faço essa oração todos os dias. Minha ansiedade diminuiu e comecei a prosperar novamente."',
     },
   ];
 
@@ -180,7 +180,7 @@ export default function LandingPageBR() {
         </div>
 
         <div className="relative mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 mb-14 animate-fadeInUp">
-          <div className="group flex items-center gap-2 rounded-full border border-[#D9C2A0] bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#172033]/80 backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-[#C6862D]/40">
+          <div className="group flex items-center gap-2 rounded-full border border-[#D9C2A0] bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#172033]/80 backdrop-bl[...]
             <span className="text-[#C6862D] animate-pulse">★</span>
             <span>37.642 pessoas já transformaram suas vidas</span>
           </div>
@@ -200,7 +200,7 @@ export default function LandingPageBR() {
           </div>
         </div>
 
-        <div className="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-center">
+        <div className="relative mx-auto grid max-w-7xl gap-14 lg:grid-cols-2 lg:items-start lg:items-center">
           <div className="animate-fadeInUp">
             <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#C6862D]">
               Uma oração antiga • um poder real
@@ -222,7 +222,7 @@ export default function LandingPageBR() {
               {stats.map((item, index) => (
                 <div
                   key={index}
-                  className={`reveal rounded-3xl border border-[#D8B07A]/20 bg-white/80 px-5 py-4 text-center shadow-sm backdrop-blur transition duration-500 hover:-translate-y-1.5 hover:shadow-2xl hover:border-[#C6862D]/40 hover:bg-white stagger-${index + 1}`}
+                  className={`reveal rounded-3xl border border-[#D8B07A]/20 bg-white/80 px-5 py-4 text-center shadow-sm backdrop-blur transition duration-500 hover:-translate-y-1.5 hover:shadow-2[...]
                 >
                   <p className="text-2xl font-bold tracking-tight text-[#172033] gold-shimmer">
                     {item[0]}
@@ -237,7 +237,7 @@ export default function LandingPageBR() {
 
             {showCTA && (
               <div className="mt-8 animate-bounceIn">
-                <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-flex items-center gap-3 rounded-xl bg-gradient-to-b from-[#D39A43] to-[#B77927] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#B77927]/30 transition duration-300 hover:-translate-y-0.5 hover:brightness-110 hover:shadow-2xl animate-pulse-scale">
+                <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-flex items-center gap-3 rounded-xl bg-gradient-to-[...]
                   <span>QUERO ACESSAR AGORA</span>
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
@@ -252,29 +252,33 @@ export default function LandingPageBR() {
             </p>
           </div>
 
-          <div className="relative reveal-right">
-            <div className="vsl-container">
-              <div className="vsl-card vsl-card--clean">
-                <div className="vsl-aspect">
-                  <vturb-smartplayer
-                    id="vid-6a18ecf65045d459043ae0c1"
-                    style={{ display: 'block', width: '100%', height: '100%' }}
-                  ></vturb-smartplayer>
-                </div>
+          {/* VSL CONTAINER - CORRIGIDO */}
+          <div className="relative reveal-right w-full flex flex-col gap-0">
+            <div className="w-full h-auto bg-[#F8F4EC] rounded-[28px] overflow-hidden border-4 border-[#D8B07A] shadow-2xl">
+              <div className="w-full aspect-video">
+                <vturb-smartplayer
+                  id="vid-6a18ecf65045d459043ae0c1"
+                  style={{ 
+                    display: 'block', 
+                    width: '100%', 
+                    height: '100%',
+                    position: 'relative'
+                  }}
+                ></vturb-smartplayer>
               </div>
-
-              <p className="text-sm leading-snug text-[#6B7280] mt-4 text-center">
-                Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
-              </p>
             </div>
 
+            <p className="text-sm leading-snug text-[#6B7280] mt-6 text-center">
+              Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
+            </p>
+
             {showCTA && (
-              <div className="mt-6 w-full rounded-2xl border border-[#D8B07A]/30 bg-white p-6 text-center shadow-lg backdrop-blur animate-bounceIn z-10">
+              <div className="mt-6 w-full rounded-2xl border border-[#D8B07A]/30 bg-white p-6 text-center shadow-lg backdrop-blur animate-bounceIn z-10 relative">
                 <p className="text-sm uppercase tracking-[0.2em] text-[#B77927] font-bold mb-4 animate-pulse">
                   Seu acesso foi liberado
                 </p>
 
-                <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-flex items-center gap-3 rounded-xl bg-gradient-to-b from-[#D39A43] to-[#B77927] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#B77927]/30 transition duration-300 hover:brightness-110 hover:shadow-2xl animate-pulse-scale">
+                <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-flex items-center gap-3 rounded-xl bg-gradient-to-[...]
                   <span>QUERO ACESSAR AGORA</span>
                   <span className="transition-transform duration-300 group-hover:translate-x-1">
                     →
@@ -284,7 +288,7 @@ export default function LandingPageBR() {
             )}
 
             {/* SPONSORS SECTION */}
-            <div className="sponsors-block mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-center reveal-scale animate-float-slow">
+            <div className="sponsors-block mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-center reveal-scale animate-float-slow relative z-0">
               <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4">
                 Transmitido e Apoiado por
               </p>
@@ -293,7 +297,7 @@ export default function LandingPageBR() {
                 <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
                   <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
                     {/* Dove & Hand outline */}
-                    <path d="M44 8c-3-2-8-2-12 1-3-2-7-3-10-3C12 6 4 11 4 18c0 5 4 10 9 10 1-.2 1.5-.5 2-.8 3-1.5 5-4.5 5-7.7 0-3.5 2.5-6.5 6-7.5" stroke="#0073C2" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                    <path d="M44 8c-3-2-8-2-12 1-3-2-7-3-10-3C12 6 4 11 4 18c0 5 4 10 9 10 1-.2 1.5-.5 2-.8 3-1.5 5-4.5 5-7.7 0-3.5 2.5-6.5 6-7.5" stroke="#0073C2" strokeWidth="2.5" fill="none" s[...]
                     <path d="M26 12c3-1.5 7-1.5 10 0 4 2 8 2.5 12 1 1.5 1.5 3 2 4.5 2 2.5-.2 5-1.5 6-3" stroke="#0073C2" strokeWidth="2.5" fill="none" strokeLinecap="round" />
                     <circle cx="24" cy="18" r="1.5" fill="#0073C2" />
                     <text x="56" y="25" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="800" fill="#0073C2" letterSpacing="0.2">Canção</text>
@@ -333,13 +337,13 @@ export default function LandingPageBR() {
             </div>
 
             {/* VERIFIED SUPPORTERS */}
-            <div className="sponsors-block mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-left reveal-scale">
+            <div className="sponsors-block mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-left reveal-scale relative z-0">
               <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4 text-center">
                 Apoiadores Recomendados
               </p>
               <div className="grid gap-3 sm:grid-cols-3">
                 {/* Frei Gilson */}
-                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transitio[...]
                   <img
                     src="/assets/frei-gilson.jpg"
                     alt="Frei Gilson"
@@ -357,7 +361,7 @@ export default function LandingPageBR() {
                 </div>
 
                 {/* Padre Fábio de Melo */}
-                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transitio[...]
                   <img
                     src="/assets/fabio-de-melo.jpg"
                     alt="Padre Fábio de Melo"
@@ -375,7 +379,7 @@ export default function LandingPageBR() {
                 </div>
 
                 {/* Padre Marcelo Rossi */}
-                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transitio[...]
                   <img
                     src="/assets/marcelo-rossi.jpg"
                     alt="Padre Marcelo Rossi"
@@ -393,7 +397,6 @@ export default function LandingPageBR() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -413,7 +416,7 @@ export default function LandingPageBR() {
             {pains.map((item, index) => (
               <div
                 key={index}
-                className={`reveal rounded-3xl border border-[#D8B07A]/10 bg-white/40 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white/80 hover:border-[#D8B07A]/40 stagger-${index + 1}`}
+                className={`reveal rounded-3xl border border-[#D8B07A]/10 bg-white/40 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white/80 hover:[...]
               >
                 <div className="w-12 h-12 rounded-full border border-[#D8B07A] mx-auto mb-5 flex items-center justify-center text-[#C6862D] text-xl animate-float-slow">
                   ✦
@@ -471,7 +474,7 @@ export default function LandingPageBR() {
             {benefits.map((item, index) => (
               <div
                 key={index}
-                className={`reveal-scale bg-[#0E2744]/60 border border-[#C6862D]/20 rounded-3xl p-10 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:bg-[#0E2744] hover:border-[#C6862D]/50 stagger-${index + 1}`}
+                className={`reveal-scale bg-[#0E2744]/60 border border-[#C6862D]/20 rounded-3xl p-10 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:bg-[#0E2744] hover:bord[...]
               >
                 <div className="w-16 h-16 rounded-2xl bg-[#C6862D]/20 border border-[#C6862D]/30 text-[#F3D19C] flex items-center justify-center text-3xl font-black mx-auto mb-6 animate-float">
                   ✦
@@ -505,7 +508,7 @@ export default function LandingPageBR() {
             {testimonials.map((item, index) => (
               <div
                 key={index}
-                className={`reveal bg-white/90 border border-[#E7D7BF] rounded-3xl p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-[#D8B07A]/50 backdrop-blur stagger-${index + 1}`}
+                className={`reveal bg-white/90 border border-[#E7D7BF] rounded-3xl p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-[#D8B07[...]
               >
                 <div className="flex items-center gap-1 text-[#C6862D] text-lg mb-6">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -531,7 +534,8 @@ export default function LandingPageBR() {
 
                     <div className="flex items-center gap-1 mt-0.5 text-xs font-semibold uppercase tracking-wider text-[#B77927]">
                       <svg className="w-4 h-4 text-[#C6862D]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l5-5z" clipRule="evenodd" />
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l5-5z" clipRule[...]
+                        </path>
                       </svg>
                       <span>Cliente Verificado</span>
                     </div>
@@ -570,7 +574,7 @@ export default function LandingPageBR() {
 
           {showCTA ? (
             <div className="animate-bounceIn">
-              <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-block bg-[#C6862D] hover:bg-[#B77927] text-white font-black text-2xl px-12 py-6 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105 animate-pulse-scale">
+              <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-block bg-[#C6862D] hover:bg-[#B77927] text-white fon[...]
                 LIBERAR MEU ACESSO
               </a>
 
