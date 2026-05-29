@@ -252,50 +252,42 @@ export default function LandingPageBR() {
             </p>
           </div>
 
-          {/* PLAYER DA VSL CONVERTEAI - 16:9 LIMPO E RESPONSIVO */}
-          <div className="relative reveal-right w-full max-w-[560px] mx-auto lg:max-w-none flex flex-col items-center">
-            
-            {/* Wrapper de Sombra e Bordas Arredondadas Modernas */}
-            <div className="w-full overflow-hidden rounded-[20px] md:rounded-[28px] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.2)] ring-1 ring-black/5">
-              
-              {/* Div oficial do embed da VTurb */}
-              <div 
-                id="vid_6a18ecf65045d459043ae0c1" 
-                style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}
-              >
-                <img 
-                  id="thumb_6a18ecf65045d459043ae0c1" 
-                  src="https://images.converteai.net/ddcd638e-6f98-44c3-b326-5ddb6879caf1/players/6a18ecf65045d459043ae0c1/thumbnail.jpg" 
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
-                  alt="Carregando vídeo..."
-                />
-                <div 
-                  id="backdrop_6a18ecf65045d459043ae0c1" 
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backdropFilter: 'blur(5px)', WebkitBackdropFilter: 'blur(5px)' }}
-                />
-              </div>
+          <div className="relative reveal-right">
+            <div className="vsl-container">
+              <div className="vsl-card">
+                <div className="vsl-aspect">
+                  <div className="absolute inset-0 z-10 pointer-events-none">
+                    <div className="absolute -left-10 top-10 h-40 w-40 rounded-full bg-[#F5D18A]/40 blur-3xl animate-pulse" />
+                    <div className="absolute -right-10 bottom-10 h-32 w-32 rounded-full bg-white/40 blur-3xl animate-pulse" />
+                  </div>
 
-            </div>
+                  <vturb-smartplayer
+                    id="vid-6a18ecf65045d459043ae0c1"
+                    style={{ display: 'block', width: '100%', height: '100%' }}
+                  ></vturb-smartplayer>
+                </div>
 
-            {/* Rodapé com Validação Social */}
-            <div className="w-full flex items-center gap-4 px-5 py-4 bg-white/70 backdrop-blur rounded-[20px] mt-4 border border-[#D9C2A0]/20 shadow-sm">
-              <div className="flex -space-x-3 shrink-0">
-                {[
-                  'https://randomuser.me/api/portraits/women/65.jpg',
-                  'https://randomuser.me/api/portraits/men/22.jpg',
-                  'https://randomuser.me/api/portraits/women/45.jpg',
-                ].map((img, index) => (
-                  <img
-                    key={index}
-                    src={img}
-                    alt="avatar"
-                    className="h-9 w-9 rounded-full border-2 border-white object-cover"
-                  />
-                ))}
+                <div className="flex items-center gap-4 px-6 py-5 bg-white">
+                  <div className="flex -space-x-3 shrink-0">
+                    {[
+                      'https://randomuser.me/api/portraits/women/65.jpg',
+                      'https://randomuser.me/api/portraits/men/22.jpg',
+                      'https://randomuser.me/api/portraits/women/45.jpg',
+                    ].map((img, index) => (
+                      <img
+                        key={index}
+                        src={img}
+                        alt="avatar"
+                        className="h-10 w-10 rounded-full border-2 border-white object-cover"
+                      />
+                    ))}
+                  </div>
+
+                  <p className="text-sm leading-snug text-[#6B7280]">
+                    Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
+                  </p>
+                </div>
               </div>
-              <p className="text-sm leading-snug text-[#6B7280]">
-                Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
-              </p>
             </div>
 
             {showCTA && (

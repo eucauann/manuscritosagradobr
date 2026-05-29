@@ -320,5 +320,69 @@ html {
   animation: verifiedShimmer 2.5s ease-in-out infinite;
 }
 
+/* ========================
+   VSL / PLAYER RESPONSIVE
+   ========================
+   - Mobile-first: occupy full width with elegant side padding
+   - Preserve original video ratio (16:9 assumed) using aspect-ratio
+   - Never crop or distort: use object-fit: contain
+   - Max width constrained on desktop (900px - 1100px)
+*/
+
+.vsl-container {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vsl-card {
+  overflow: hidden;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.vsl-aspect {
+  width: 100%;
+  /* Use modern aspect-ratio; fallback not required for modern browsers */
+  aspect-ratio: 16 / 9;
+  background: #00000000;
+  position: relative;
+}
+
+.vsl-aspect vturb-smartplayer,
+.vsl-aspect iframe,
+.vsl-aspect video,
+.vsl-aspect embed {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+
+/* Ensure the player wrapper cannot force a fixed height */
+.vsl-aspect * {
+  max-height: 100% !important;
+}
+
+/* Desktop constraints: elegant, premium sizing */
+@media (min-width: 768px) {
+  .vsl-container { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .vsl-container { max-width: 1100px; }
+  .vsl-card { border-radius: 28px; }
+}
+
+@media (min-width: 1280px) {
+  .vsl-container { max-width: 1000px; }
+}
 
 
