@@ -256,8 +256,13 @@ export default function LandingPageBR() {
                   <div className="absolute -right-10 bottom-10 h-32 w-32 rounded-full bg-white/40 blur-3xl animate-pulse" />
                 </div>
 
-                <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
-                  <vturb-smartplayer id="vid-6a18ecf65045d459043ae0c1" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></vturb-smartplayer>
+                <div className="w-full flex justify-center">
+                  <div className="w-full max-w-[480px] md:max-w-[720px]">
+                    <vturb-smartplayer
+                      id="vid-6a18ecf65045d459043ae0c1"
+                      style={{ display: 'block', width: '100%', height: '100%' }}
+                    ></vturb-smartplayer>
+                  </div>
                 </div>
               </div>
 
