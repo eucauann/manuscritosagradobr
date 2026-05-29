@@ -252,33 +252,46 @@ export default function LandingPageBR() {
             </p>
           </div>
 
-          {/* PLAYER DA VSL CONVERTEAI - 16:9 LIMPO E RESPONSIVO */}
-          <div className="relative reveal-right w-full max-w-[560px] mx-auto lg:max-w-none flex flex-col items-center">
+          {/* PLAYER DA VSL CONVERTEAI - 9:16 VERTICAL COM MOLDURA DE CELULAR PREMIUM */}
+          <div className="relative reveal-right w-full max-w-[360px] sm:max-w-[380px] mx-auto flex flex-col items-center">
             
-            {/* Wrapper de Sombra e Bordas Arredondadas Modernas */}
-            <div className="w-full overflow-hidden rounded-[20px] md:rounded-[28px] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.2)] ring-1 ring-black/5">
+            {/* Moldura Externa do Celular */}
+            <div className="relative w-full rounded-[38px] sm:rounded-[46px] p-2.5 sm:p-3 bg-gradient-to-b from-[#0e243a] to-[#040d16] border-[4px] border-[#C6862D]/60 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] ring-1 ring-white/10 overflow-hidden">
               
-              {/* Div oficial do embed da VTurb */}
-              <div 
-                id="vid_6a18ecf65045d459043ae0c1" 
-                style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}
-              >
-                <img 
-                  id="thumb_6a18ecf65045d459043ae0c1" 
-                  src="https://images.converteai.net/ddcd638e-6f98-44c3-b326-5ddb6879caf1/players/6a18ecf65045d459043ae0c1/thumbnail.jpg" 
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
-                  alt="Carregando vídeo..."
-                />
-                <div 
-                  id="backdrop_6a18ecf65045d459043ae0c1" 
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backdropFilter: 'blur(5px)', WebkitBackdropFilter: 'blur(5px)' }}
-                />
+              {/* Brilho reflexivo na tela (Diagonal Glass Effect) */}
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/5 to-white/10 z-20 rounded-[28px] sm:rounded-[36px]" />
+              
+              {/* Dynamic Island / Notch */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-4 sm:w-28 sm:h-4.5 bg-black rounded-full z-30 flex items-center justify-end px-3">
+                {/* Câmera Frontal */}
+                <div className="w-1.5 h-1.5 rounded-full bg-[#101f30] border border-[#2b3a4a]/40" />
               </div>
 
+              {/* Tela do Celular (Onde fica o vídeo) */}
+              <div className="w-full overflow-hidden rounded-[28px] sm:rounded-[36px] bg-black relative z-10 aspect-[9/16] shadow-inner">
+                
+                {/* Div oficial do embed da VTurb (Modificado para 9:16 -> padding-top: 177.77%) */}
+                <div 
+                  id="vid_6a18ecf65045d459043ae0c1" 
+                  style={{ position: 'relative', width: '100%', padding: '177.77% 0 0' }}
+                >
+                  <img 
+                    id="thumb_6a18ecf65045d459043ae0c1" 
+                    src="https://images.converteai.net/ddcd638e-6f98-44c3-b326-5ddb6879caf1/players/6a18ecf65045d459043ae0c1/thumbnail.jpg" 
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+                    alt="Carregando vídeo..."
+                  />
+                  <div 
+                    id="backdrop_6a18ecf65045d459043ae0c1" 
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backdropFilter: 'blur(5px)', WebkitBackdropFilter: 'blur(5px)' }}
+                  />
+                </div>
+
+              </div>
             </div>
 
             {/* Rodapé com Validação Social */}
-            <div className="w-full flex items-center gap-4 px-5 py-4 bg-white/70 backdrop-blur rounded-[20px] mt-4 border border-[#D9C2A0]/20 shadow-sm">
+            <div className="w-full max-w-[360px] sm:max-w-[380px] flex items-center gap-4 px-5 py-4 bg-white/70 backdrop-blur rounded-[20px] mt-4 border border-[#D9C2A0]/20 shadow-sm">
               <div className="flex -space-x-3 shrink-0">
                 {[
                   'https://randomuser.me/api/portraits/women/65.jpg',
@@ -299,7 +312,7 @@ export default function LandingPageBR() {
             </div>
 
             {showCTA && (
-              <div className="mt-6 w-full rounded-2xl border border-[#D8B07A]/30 bg-white p-6 text-center shadow-lg backdrop-blur animate-bounceIn z-10">
+              <div className="mt-6 w-full max-w-[360px] sm:max-w-[380px] rounded-2xl border border-[#D8B07A]/30 bg-white p-6 text-center shadow-lg backdrop-blur animate-bounceIn z-10">
                 <p className="text-sm uppercase tracking-[0.2em] text-[#B77927] font-bold mb-4 animate-pulse">
                   Seu acesso foi liberado
                 </p>
