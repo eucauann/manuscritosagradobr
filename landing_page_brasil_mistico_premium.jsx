@@ -124,6 +124,17 @@ export default function LandingPageBR() {
     return () => clearTimeout(timer);
   }, [videoStarted]);
 
+  // Carrega o script do player VSL quando o vídeo começar
+  useEffect(() => {
+    if (!videoStarted) return;
+    if (document.getElementById('vturb-player-script')) return;
+    const s = document.createElement('script');
+    s.id = 'vturb-player-script';
+    s.src = 'https://scripts.converteai.net/ddcd638e-6f98-44c3-b326-5ddb6879caf1/players/6a18ecf65045d459043ae0c1/v4/player.js';
+    s.async = true;
+    document.head.appendChild(s);
+  }, [videoStarted]);
+
   // Observer de Scroll Premium
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -246,6 +257,10 @@ export default function LandingPageBR() {
                   alt="Mulher meditando"
                   className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
                 />
+
+                {videoStarted && (
+                  <vturb-smartplayer id="vid-6a18ecf65045d459043ae0c1" style={{display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px'}}></vturb-smartplayer>
+                )}
 
                 {!videoStarted ? (
                   <button
