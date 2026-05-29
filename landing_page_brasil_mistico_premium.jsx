@@ -252,417 +252,409 @@ export default function LandingPageBR() {
             </p>
           </div>
 
-          <div className="relative reveal-right">
-            <div className="overflow-hidden rounded-[30px] bg-white shadow-[0_30px_80px_rgba(0,0,0,0.12)] ring-1 ring-black/5 transition duration-500 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(0,0,0,0.16)]">
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <div className="absolute inset-0 z-10">
-                  <div className="absolute -left-10 top-10 h-40 w-40 rounded-full bg-[#F5D18A]/40 blur-3xl animate-pulse" />
-                  <div className="absolute -right-10 bottom-10 h-32 w-32 rounded-full bg-white/40 blur-3xl animate-pulse" />
-                </div>
-
-                <img
-                  src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1400&auto=format&fit=crop"
-                  alt="Mulher meditando"
-                  className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
+          {/* PLAYER DA VSL CONVERTEAI - 16:9 LIMPO E RESPONSIVO */}
+          <div className="relative reveal-right w-full max-w-[560px] mx-auto lg:max-w-none flex flex-col items-center">
+            
+            {/* Wrapper de Sombra e Bordas Arredondadas Modernas */}
+            <div className="w-full overflow-hidden rounded-[20px] md:rounded-[28px] bg-black shadow-[0_20px_50px_rgba(0,0,0,0.2)] ring-1 ring-black/5">
+              
+              {/* Div oficial do embed da VTurb */}
+              <div 
+                id="vid_6a18ecf65045d459043ae0c1" 
+                style={{ position: 'relative', width: '100%', padding: '56.25% 0 0' }}
+              >
+                <img 
+                  id="thumb_6a18ecf65045d459043ae0c1" 
+                  src="https://images.converteai.net/ddcd638e-6f98-44c3-b326-5ddb6879caf1/players/6a18ecf65045d459043ae0c1/thumbnail.jpg" 
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+                  alt="Carregando vídeo..."
                 />
-
-                {!videoStarted ? (
-                  <button
-                    onClick={() => setVideoStarted(true)}
-                    className="absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/30 backdrop-blur-sm ring-2 ring-white/60 transition hover:scale-110 sm:h-20 sm:w-20 play-btn-ripple"
-                  >
-                    <div className="ml-1 w-0 h-0 border-t-[12px] border-t-transparent border-l-[18px] border-l-white border-b-[12px] border-b-transparent" />
-                  </button>
-                ) : (
-                  <div className="absolute inset-0 z-20 bg-black/10 backdrop-blur-[2px] flex items-center justify-center pointer-events-none">
-                    <div className="text-white text-center p-4 bg-[#07192E]/80 rounded-2xl mx-4 shadow-2xl border border-white/10 animate-fadeInUp">
-                      <div className="w-10 h-10 border-4 border-t-[#C6862D] border-white/20 rounded-full animate-spin mx-auto mb-3"></div>
-                      <p className="font-bold text-sm">Revelação Iniciada...</p>
-                      <p className="text-[10px] text-gray-300 mt-1">Aproveite a mensagem até o final.</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Rodapé do card com avatares */}
-              <div className="flex items-center gap-4 px-5 py-4 bg-white rounded-b-[28px]">
-                <div className="flex -space-x-3 shrink-0">
-                  {[
-                    'https://randomuser.me/api/portraits/women/65.jpg',
-                    'https://randomuser.me/api/portraits/men/22.jpg',
-                    'https://randomuser.me/api/portraits/women/45.jpg',
-                  ].map((img, index) => (
-                    <img
-                      key={index}
-                      src={img}
-                      alt="avatar"
-                      className="h-9 w-9 rounded-full border-2 border-white object-cover"
-                    />
-                  ))}
-                </div>
-                <p className="text-sm leading-snug text-[#6B7280]">
-                  Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {showCTA && (
-            <div className="mt-6 rounded-2xl border border-[#D8B07A]/30 bg-white p-6 text-center shadow-lg backdrop-blur animate-bounceIn">
-              <p className="text-sm uppercase tracking-[0.2em] text-[#B77927] font-bold mb-4 animate-pulse">
-                Seu acesso foi liberado
-              </p>
-
-              <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-flex items-center gap-3 rounded-xl bg-gradient-to-b from-[#D39A43] to-[#B77927] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#B77927]/30 transition duration-300 hover:brightness-110 hover:shadow-2xl animate-pulse-scale">
-                <span>QUERO ACESSAR AGORA</span>
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
-            </div>
-          )}
-
-          {/* SPONSORS SECTION */}
-          <div className="mt-6 rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-center reveal-scale animate-float-slow">
-            <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4">
-              Transmitido e Apoiado por
-            </p>
-            <div className="flex items-center justify-around gap-6 flex-wrap">
-              {/* Canção Nova TV */}
-              <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
-                <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
-                  {/* Dove & Hand outline */}
-                  <path d="M44 8c-3-2-8-2-12 1-3-2-7-3-10-3C12 6 4 11 4 18c0 5 4 10 9 10 1-.2 1.5-.5 2-.8 3-1.5 5-4.5 5-7.7 0-3.5 2.5-6.5 6-7.5" stroke="#0073C2" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                  <path d="M26 12c3-1.5 7-1.5 10 0 4 2 8 2.5 12 1 1.5 1.5 3 2 4.5 2 2.5-.2 5-1.5 6-3" stroke="#0073C2" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                  <circle cx="24" cy="18" r="1.5" fill="#0073C2" />
-                  <text x="56" y="25" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="800" fill="#0073C2" letterSpacing="0.2">Canção</text>
-                  <text x="56" y="35" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="800" fill="#0073C2" letterSpacing="0.2">Nova</text>
-                  <line x1="56" y1="39" x2="110" y2="39" stroke="#0073C2" strokeWidth="1.5" />
-                  <text x="76" y="46" fontFamily="system-ui, sans-serif" fontSize="8" fontWeight="900" fill="#0073C2" letterSpacing="1">TV</text>
-                </svg>
-              </div>
-
-              {/* Aparecida */}
-              <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
-                <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
-                  {/* Gold circle with blue rays Converging */}
-                  <circle cx="20" cy="22" r="17" fill="#F4C234" />
-                  <path d="M20 7c0 0-8 15-9 22M20 7c0 0-4 16-5 23M20 7c0 0 0 17 0 25M20 7c0 0 4 16 5 23M20 7c0 0 8 15 9 22" stroke="#005BAB" strokeWidth="2.2" strokeLinecap="round" />
-                  <text x="44" y="27" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="900" fill="#D49E10" letterSpacing="1.2">APARECIDA</text>
-                </svg>
-              </div>
-
-              {/* Rede Vida */}
-              <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
-                <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="goldStar" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#FFA600" />
-                      <stop offset="100%" stopColor="#FFE054" />
-                    </linearGradient>
-                  </defs>
-                  {/* Elegant Star */}
-                  <path d="M20 5 L23 15 L32 12 L24 19 L28 29 L20 22 L12 29 L16 19 L8 12 L17 15 Z" fill="url(#goldStar)" />
-                  <text x="40" y="23" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="900" fill="#0074B7" letterSpacing="0.8">REDE</text>
-                  <text x="68" y="23" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="900" fill="#0074B7" letterSpacing="0.8">VIDA</text>
-                  <text x="40" y="32" fontFamily="system-ui, sans-serif" fontSize="6.5" fontWeight="600" fill="#7B7F89" letterSpacing="1">A TV DA FAMÍLIA</text>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          {/* VERIFIED SUPPORTERS */}
-          <div className="mt-6 rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-left reveal-scale">
-            <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4 text-center">
-              Apoiadores Recomendados
-            </p>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {/* Frei Gilson */}
-              <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
-                <img
-                  src="/assets/frei-gilson.jpg"
-                  alt="Frei Gilson"
-                  className="w-10 h-10 rounded-full object-cover border border-[#C6862D]/20 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
+                <div 
+                  id="backdrop_6a18ecf65045d459043ae0c1" 
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backdropFilter: 'blur(5px)', WebkitBackdropFilter: 'blur(5px)' }}
                 />
-                <div className="flex flex-col min-w-0">
-                  <span className="text-[12px] font-extrabold text-[#172033] leading-none flex items-center gap-1 min-w-0">
-                    <span className="truncate">Frei Gilson</span>
-                    <svg className="w-3.5 h-3.5 fill-[#0095F6] verified-badge shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                    </svg>
-                  </span>
-                  <span className="text-[9px] text-[#7B7F89] mt-1 font-medium leading-none">Recomendado</span>
-                </div>
               </div>
 
-              {/* Padre Fábio de Melo */}
-              <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
-                <img
-                  src="/assets/fabio-de-melo.jpg"
-                  alt="Padre Fábio de Melo"
-                  className="w-10 h-10 rounded-full object-cover border border-[#C6862D]/20 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
-                />
-                <div className="flex flex-col min-w-0">
-                  <span className="text-[11px] font-extrabold text-[#172033] leading-none flex items-center gap-1 min-w-0">
-                    <span className="truncate">Pe. Fábio Melo</span>
-                    <svg className="w-3.5 h-3.5 fill-[#0095F6] verified-badge shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                    </svg>
-                  </span>
-                  <span className="text-[9px] text-[#7B7F89] mt-1 font-medium leading-none">Recomendado</span>
-                </div>
-              </div>
-
-              {/* Padre Marcelo Rossi */}
-              <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
-                <img
-                  src="/assets/marcelo-rossi.jpg"
-                  alt="Padre Marcelo Rossi"
-                  className="w-10 h-10 rounded-full object-cover border border-[#C6862D]/20 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
-                />
-                <div className="flex flex-col min-w-0">
-                  <span className="text-[11px] font-extrabold text-[#172033] leading-none flex items-center gap-1 min-w-0">
-                    <span className="truncate">Pe. M. Rossi</span>
-                    <svg className="w-3.5 h-3.5 fill-[#0095F6] verified-badge shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
-                    </svg>
-                  </span>
-                  <span className="text-[9px] text-[#7B7F89] mt-1 font-medium leading-none">Recomendado</span>
-                </div>
-              </div>
             </div>
-          </div>
-        </div>
-    </div>
-      </section >
 
-    {/* PAIN SECTION */ }
-    < section className = "bg-[#F3EBDD] py-24 px-6 relative overflow-hidden section-glow" >
-      <div className="max-w-6xl mx-auto text-center">
-        <div className="reveal text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-6 font-bold">
-          Você se sente assim?
-        </div>
-
-        <h2 className="reveal text-4xl md:text-6xl font-black text-[#172033] leading-tight max-w-4xl mx-auto mb-16 font-serif">
-          Você tenta de tudo... mas sente que nada realmente muda.
-        </h2>
-
-        <div className="grid md:grid-cols-4 gap-8 text-center">
-          {pains.map((item, index) => (
-            <div
-              key={index}
-              className={`reveal rounded-3xl border border-[#D8B07A]/10 bg-white/40 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white/80 hover:border-[#D8B07A]/40 stagger-${index + 1}`}
-            >
-              <div className="w-12 h-12 rounded-full border border-[#D8B07A] mx-auto mb-5 flex items-center justify-center text-[#C6862D] text-xl animate-float-slow">
-                ✦
-              </div>
-              <p className="text-[#5F6572] leading-relaxed text-sm">{item}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      </section >
-
-    {/* MYSTERY SECTION */ }
-    < section className = "py-24 px-6 bg-[#F8F4EC] relative" >
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-        <div className="reveal-left">
-          <div className="text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
-            O segredo escondido
-          </div>
-
-          <h2 className="text-4xl md:text-5xl font-black leading-tight mb-8 text-[#172033] font-serif">
-            Um Conhecimento Que Ficou Oculto Por Décadas
-          </h2>
-
-          <p className="text-[#5F6572] text-base leading-relaxed mb-6">
-            Este material reúne ensinamentos raros que foram preservados ao longo do tempo para destravar caminhos e restabelecer a harmonia.
-          </p>
-
-          <p className="text-[#6B7280] text-base leading-relaxed">
-            Muitos afirmam perceber mudanças profundas em prosperidade e clareza espiritual ao colocar estas palavras ancestrais em prática.
-          </p>
-        </div>
-
-        <div className="reveal-right">
-          <img
-            src="/assets/arcanjo-miguel.jpg"
-            alt="Arcanjo Miguel"
-            className="rounded-[28px] shadow-2xl border border-[#E7D7BF] transition-all duration-500 hover:scale-[1.02] hover:shadow-amber-500/10"
-          />
-        </div>
-      </div>
-      </section >
-
-    {/* BENEFITS */ }
-    < section className = "py-24 px-6 bg-[#07192E] text-white relative" >
-      <div className="max-w-6xl mx-auto text-center">
-        <div className="reveal text-[#D8B07A] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
-          O que você vai descobrir
-        </div>
-
-        <h2 className="reveal text-4xl md:text-5xl font-black mb-16 font-serif">
-          Benefícios Que Estão Impactando Milhares
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {benefits.map((item, index) => (
-            <div
-              key={index}
-              className={`reveal-scale bg-[#0E2744]/60 border border-[#C6862D]/20 rounded-3xl p-10 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:bg-[#0E2744] hover:border-[#C6862D]/50 stagger-${index + 1}`}
-            >
-              <div className="w-16 h-16 rounded-2xl bg-[#C6862D]/20 border border-[#C6862D]/30 text-[#F3D19C] flex items-center justify-center text-3xl font-black mx-auto mb-6 animate-float">
-                ✦
-              </div>
-
-              <h3 className="text-2xl font-black mb-4 text-[#F3D19C]">
-                {item.title}
-              </h3>
-
-              <p className="text-[#CBD5E1] leading-relaxed text-sm">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-      </section >
-
-    {/* TESTIMONIALS */ }
-    < section className = "py-24 px-6 bg-[#F8F4EC] relative" >
-      <div className="max-w-6xl mx-auto text-center">
-        <div className="reveal text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
-          Relatos reais
-        </div>
-
-        <h2 className="reveal text-4xl md:text-5xl font-black mb-16 text-[#172033] font-serif">
-          Pessoas Que Aplicaram e Viram Resultados
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((item, index) => (
-            <div
-              key={index}
-              className={`reveal bg-white/90 border border-[#E7D7BF] rounded-3xl p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-[#D8B07A]/50 backdrop-blur stagger-${index + 1}`}
-            >
-              <div className="flex items-center gap-1 text-[#C6862D] text-lg mb-6">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i}>★</span>
+            {/* Rodapé com Validação Social */}
+            <div className="w-full flex items-center gap-4 px-5 py-4 bg-white/70 backdrop-blur rounded-[20px] mt-4 border border-[#D9C2A0]/20 shadow-sm">
+              <div className="flex -space-x-3 shrink-0">
+                {[
+                  'https://randomuser.me/api/portraits/women/65.jpg',
+                  'https://randomuser.me/api/portraits/men/22.jpg',
+                  'https://randomuser.me/api/portraits/women/45.jpg',
+                ].map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt="avatar"
+                    className="h-9 w-9 rounded-full border-2 border-white object-cover"
+                  />
                 ))}
               </div>
-
-              <p className="text-[#5F6572] text-[14px] leading-relaxed mb-8 italic">
-                {item.text}
+              <p className="text-sm leading-snug text-[#6B7280]">
+                Junte-se a milhares de pessoas que já estão vivendo milagres em suas vidas todos os dias.
               </p>
+            </div>
 
-              <div className="flex items-center gap-3 mt-auto pt-4 border-t border-[#F3EBDD]">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-white ring-2 ring-[#D8B07A]/30"
-                />
+            {showCTA && (
+              <div className="mt-6 w-full rounded-2xl border border-[#D8B07A]/30 bg-white p-6 text-center shadow-lg backdrop-blur animate-bounceIn z-10">
+                <p className="text-sm uppercase tracking-[0.2em] text-[#B77927] font-bold mb-4 animate-pulse">
+                  Seu acesso foi liberado
+                </p>
 
-                <div>
-                  <div className="text-[#172033] font-bold text-base">
-                    {item.name}
+                <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-flex items-center gap-3 rounded-xl bg-gradient-to-b from-[#D39A43] to-[#B77927] px-8 py-4 text-sm font-bold uppercase tracking-wider text-white shadow-xl shadow-[#B77927]/30 transition duration-300 hover:brightness-110 hover:shadow-2xl animate-pulse-scale">
+                  <span>QUERO ACESSAR AGORA</span>
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+              </div>
+            )}
+
+            {/* SPONSORS SECTION */}
+            <div className="mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-center reveal-scale animate-float-slow">
+              <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4">
+                Transmitido e Apoiado por
+              </p>
+              <div className="flex items-center justify-around gap-6 flex-wrap">
+                {/* Canção Nova TV */}
+                <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+                  <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                    {/* Dove & Hand outline */}
+                    <path d="M44 8c-3-2-8-2-12 1-3-2-7-3-10-3C12 6 4 11 4 18c0 5 4 10 9 10 1-.2 1.5-.5 2-.8 3-1.5 5-4.5 5-7.7 0-3.5 2.5-6.5 6-7.5" stroke="#0073C2" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                    <path d="M26 12c3-1.5 7-1.5 10 0 4 2 8 2.5 12 1 1.5 1.5 3 2 4.5 2 2.5-.2 5-1.5 6-3" stroke="#0073C2" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                    <circle cx="24" cy="18" r="1.5" fill="#0073C2" />
+                    <text x="56" y="25" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="800" fill="#0073C2" letterSpacing="0.2">Canção</text>
+                    <text x="56" y="35" fontFamily="system-ui, sans-serif" fontSize="11" fontWeight="800" fill="#0073C2" letterSpacing="0.2">Nova</text>
+                    <line x1="56" y1="39" x2="110" y2="39" stroke="#0073C2" strokeWidth="1.5" />
+                    <text x="76" y="46" fontFamily="system-ui, sans-serif" fontSize="8" fontWeight="900" fill="#0073C2" letterSpacing="1">TV</text>
+                  </svg>
+                </div>
+
+                {/* Aparecida */}
+                <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+                  <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                    {/* Gold circle with blue rays Converging */}
+                    <circle cx="20" cy="22" r="17" fill="#F4C234" />
+                    <path d="M20 7c0 0-8 15-9 22M20 7c0 0-4 16-5 23M20 7c0 0 0 17 0 25M20 7c0 0 4 16 5 23M20 7c0 0 8 15 9 22" stroke="#005BAB" strokeWidth="2.2" strokeLinecap="round" />
+                    <text x="44" y="27" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="900" fill="#D49E10" letterSpacing="1.2">APARECIDA</text>
+                  </svg>
+                </div>
+
+                {/* Rede Vida */}
+                <div className="flex flex-col items-center justify-center grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300 transform hover:scale-105">
+                  <svg className="h-10 w-24" viewBox="0 0 120 50" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="goldStar" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#FFA600" />
+                        <stop offset="100%" stopColor="#FFE054" />
+                      </linearGradient>
+                    </defs>
+                    {/* Elegant Star */}
+                    <path d="M20 5 L23 15 L32 12 L24 19 L28 29 L20 22 L12 29 L16 19 L8 12 L17 15 Z" fill="url(#goldStar)" />
+                    <text x="40" y="23" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="900" fill="#0074B7" letterSpacing="0.8">REDE</text>
+                    <text x="68" y="23" fontFamily="system-ui, sans-serif" fontSize="10" fontWeight="900" fill="#0074B7" letterSpacing="0.8">VIDA</text>
+                    <text x="40" y="32" fontFamily="system-ui, sans-serif" fontSize="6.5" fontWeight="600" fill="#7B7F89" letterSpacing="1">A TV DA FAMÍLIA</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* VERIFIED SUPPORTERS */}
+            <div className="mt-6 w-full rounded-[24px] border border-[#D9C2A0]/20 bg-white/70 p-5 backdrop-blur shadow-md text-left reveal-scale">
+              <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-[#7B7F89] mb-4 text-center">
+                Apoiadores Recomendados
+              </p>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {/* Frei Gilson */}
+                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                  <img
+                    src="/assets/frei-gilson.jpg"
+                    alt="Frei Gilson"
+                    className="w-10 h-10 rounded-full object-cover border border-[#C6862D]/20 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
+                  />
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[12px] font-extrabold text-[#172033] leading-none flex items-center gap-1 min-w-0">
+                      <span className="truncate">Frei Gilson</span>
+                      <svg className="w-3.5 h-3.5 fill-[#0095F6] verified-badge shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                      </svg>
+                    </span>
+                    <span className="text-[9px] text-[#7B7F89] mt-1 font-medium leading-none">Recomendado</span>
                   </div>
+                </div>
 
-                  <div className="flex items-center gap-1 mt-0.5 text-xs font-semibold uppercase tracking-wider text-[#B77927]">
-                    <svg className="w-4 h-4 text-[#C6862D]" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l5-5z" clipRule="evenodd" />
-                    </svg>
-                    <span>Cliente Verificado</span>
+                {/* Padre Fábio de Melo */}
+                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                  <img
+                    src="/assets/fabio-de-melo.jpg"
+                    alt="Padre Fábio de Melo"
+                    className="w-10 h-10 rounded-full object-cover border border-[#C6862D]/20 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
+                  />
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[11px] font-extrabold text-[#172033] leading-none flex items-center gap-1 min-w-0">
+                      <span className="truncate">Pe. Fábio Melo</span>
+                      <svg className="w-3.5 h-3.5 fill-[#0095F6] verified-badge shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                      </svg>
+                    </span>
+                    <span className="text-[9px] text-[#7B7F89] mt-1 font-medium leading-none">Recomendado</span>
+                  </div>
+                </div>
+
+                {/* Padre Marcelo Rossi */}
+                <div className="group flex items-center gap-3 bg-white/60 hover:bg-white rounded-2xl p-2.5 border border-[#D9C2A0]/10 hover:border-[#C6862D]/30 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5">
+                  <img
+                    src="/assets/marcelo-rossi.jpg"
+                    alt="Padre Marcelo Rossi"
+                    className="w-10 h-10 rounded-full object-cover border border-[#C6862D]/20 shadow-sm group-hover:scale-105 transition-transform duration-300 shrink-0"
+                  />
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[11px] font-extrabold text-[#172033] leading-none flex items-center gap-1 min-w-0">
+                      <span className="truncate">Pe. M. Rossi</span>
+                      <svg className="w-3.5 h-3.5 fill-[#0095F6] verified-badge shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                      </svg>
+                    </span>
+                    <span className="text-[9px] text-[#7B7F89] mt-1 font-medium leading-none">Recomendado</span>
                   </div>
                 </div>
               </div>
             </div>
-          ))}
+
+          </div>
         </div>
-      </div>
-      </section >
+      </section>
 
-    {/* OFFER */ }
-    < section className = "py-24 px-6 bg-[#07192E] text-white relative" >
-      <div className="max-w-4xl mx-auto text-center border border-[#C6862D]/20 rounded-[30px] px-4 py-12 sm:px-10 md:p-20 bg-[#0B213B]/80 backdrop-blur-md shadow-2xl reveal-scale">
-        <div className="text-[#D8B07A] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
-          Oferta especial
+      {/* PAIN SECTION */}
+      <section className="bg-[#F3EBDD] py-24 px-6 relative overflow-hidden section-glow">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="reveal text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-6 font-bold">
+            Você se sente assim?
+          </div>
+
+          <h2 className="reveal text-4xl md:text-6xl font-black text-[#172033] leading-tight max-w-4xl mx-auto mb-16 font-serif">
+            Você tenta de tudo... mas sente que nada realmente muda.
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8 text-center">
+            {pains.map((item, index) => (
+              <div
+                key={index}
+                className={`reveal rounded-3xl border border-[#D8B07A]/10 bg-white/40 p-6 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:bg-white/80 hover:border-[#D8B07A]/40 stagger-${index + 1}`}
+              >
+                <div className="w-12 h-12 rounded-full border border-[#D8B07A] mx-auto mb-5 flex items-center justify-center text-[#C6862D] text-xl animate-float-slow">
+                  ✦
+                </div>
+                <p className="text-[#5F6572] leading-relaxed text-sm">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight font-serif">
-          Receba Acesso Imediato Agora
-        </h2>
+      {/* MYSTERY SECTION */}
+      <section className="py-24 px-6 bg-[#F8F4EC] relative">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="reveal-left">
+            <div className="text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
+              O segredo escondido
+            </div>
 
-        <p className="text-[#CBD5E1] text-base leading-relaxed mb-10 max-w-2xl mx-auto">
-          Clique no botão abaixo e desbloqueie imediatamente o conteúdo completo do Manuscrito Sagrado com desconto especial.
-        </p>
+            <h2 className="text-4xl md:text-5xl font-black leading-tight mb-8 text-[#172033] font-serif">
+              Um Conhecimento Que Ficou Oculto Por Décadas
+            </h2>
 
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
-          <span className="text-gray-400 line-through text-lg sm:text-xl">
-            R$197
-          </span>
+            <p className="text-[#5F6572] text-base leading-relaxed mb-6">
+              Este material reúne ensinamentos raros que foram preservados ao longo do tempo para destravar caminhos e restabelecer a harmonia.
+            </p>
 
-          <span className="text-[#F3D19C] text-4xl sm:text-5xl md:text-6xl font-black gold-shimmer animate-glow-text whitespace-nowrap">
-            R$29,90
-          </span>
+            <p className="text-[#6B7280] text-base leading-relaxed">
+              Muitos afirmam perceber mudanças profundas em prosperidade e clareza espiritual ao colocar estas palavras ancestrais em prática.
+            </p>
+          </div>
+
+          <div className="reveal-right">
+            <img
+              src="/assets/arcanjo-miguel.jpg"
+              alt="Arcanjo Miguel"
+              className="rounded-[28px] shadow-2xl border border-[#E7D7BF] transition-all duration-500 hover:scale-[1.02] hover:shadow-amber-500/10"
+            />
+          </div>
         </div>
+      </section>
 
-        {showCTA ? (
-          <div className="animate-bounceIn">
-            <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-block bg-[#C6862D] hover:bg-[#B77927] text-white font-black text-2xl px-12 py-6 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105 animate-pulse-scale">
-              LIBERAR MEU ACESSO
-            </a>
+      {/* BENEFITS */}
+      <section className="py-24 px-6 bg-[#07192E] text-white relative">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="reveal text-[#D8B07A] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
+            O que você vai descobrir
+          </div>
 
-            <div className="mt-12 flex flex-col items-center gap-6">
-              <div className="bg-white rounded-3xl p-6 shadow-2xl border border-[#D8B07A]/20 max-w-md w-full">
-                <div className="flex items-center justify-center mb-4">
-                  <img src="/assets/garantia-30-dias.jpg" alt="Garantia 30 Dias" className="h-28 w-28 object-contain transition duration-300 hover:scale-105" />
+          <h2 className="reveal text-4xl md:text-5xl font-black mb-16 font-serif">
+            Benefícios Que Estão Impactando Milhares
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {benefits.map((item, index) => (
+              <div
+                key={index}
+                className={`reveal-scale bg-[#0E2744]/60 border border-[#C6862D]/20 rounded-3xl p-10 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:bg-[#0E2744] hover:border-[#C6862D]/50 stagger-${index + 1}`}
+              >
+                <div className="w-16 h-16 rounded-2xl bg-[#C6862D]/20 border border-[#C6862D]/30 text-[#F3D19C] flex items-center justify-center text-3xl font-black mx-auto mb-6 animate-float">
+                  ✦
                 </div>
 
-                <h3 className="text-[#172033] text-2xl font-black mb-2">
-                  Garantia Blindada de 30 Dias
+                <h3 className="text-2xl font-black mb-4 text-[#F3D19C]">
+                  {item.title}
                 </h3>
 
-                <p className="text-[#5F6572] leading-relaxed text-base">
-                  Você terá 30 dias completos para acessar o conteúdo. Se não ficar satisfeito, devolvemos 100% do seu dinheiro.
+                <p className="text-[#CBD5E1] leading-relaxed text-sm">
+                  {item.desc}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
-                <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
-                  <MastercardLogo className="h-full w-full object-contain" />
+      {/* TESTIMONIALS */}
+      <section className="py-24 px-6 bg-[#F8F4EC] relative">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="reveal text-[#C28A3D] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
+            Relatos reais
+          </div>
+
+          <h2 className="reveal text-4xl md:text-5xl font-black mb-16 text-[#172033] font-serif">
+            Pessoas Que Aplicaram e Viram Resultados
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((item, index) => (
+              <div
+                key={index}
+                className={`reveal bg-white/90 border border-[#E7D7BF] rounded-3xl p-8 text-left shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:border-[#D8B07A]/50 backdrop-blur stagger-${index + 1}`}
+              >
+                <div className="flex items-center gap-1 text-[#C6862D] text-lg mb-6">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i}>★</span>
+                  ))}
                 </div>
-                <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
-                  <VisaLogo className="h-full w-full object-contain" fill="#1A1F71" />
-                </div>
-                <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
-                  <PixLogo className="h-full w-full object-contain" fill="#32BCAD" />
+
+                <p className="text-[#5F6572] text-[14px] leading-relaxed mb-8 italic">
+                  {item.text}
+                </p>
+
+                <div className="flex items-center gap-3 mt-auto pt-4 border-t border-[#F3EBDD]">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-14 h-14 rounded-full object-cover border-2 border-white ring-2 ring-[#D8B07A]/30"
+                  />
+
+                  <div>
+                    <div className="text-[#172033] font-bold text-base">
+                      {item.name}
+                    </div>
+
+                    <div className="flex items-center gap-1 mt-0.5 text-xs font-semibold uppercase tracking-wider text-[#B77927]">
+                      <svg className="w-4 h-4 text-[#C6862D]" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l5-5z" clipRule="evenodd" />
+                      </svg>
+                      <span>Cliente Verificado</span>
+                    </div>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div className="text-[#94A3B8] text-sm">
-                Pagamento 100% seguro • Garantia de 30 dias
+      {/* OFFER */}
+      <section className="py-24 px-6 bg-[#07192E] text-white relative">
+        <div className="max-w-4xl mx-auto text-center border border-[#C6862D]/20 rounded-[30px] px-4 py-12 sm:px-10 md:p-20 bg-[#0B213B]/80 backdrop-blur-md shadow-2xl reveal-scale">
+          <div className="text-[#D8B07A] uppercase tracking-[0.25em] text-xs mb-4 font-bold">
+            Oferta especial
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-black mb-8 leading-tight font-serif">
+            Receba Acesso Imediato Agora
+          </h2>
+
+          <p className="text-[#CBD5E1] text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+            Clique no botão abaixo e desbloqueie imediatamente o conteúdo completo do Manuscrito Sagrado com desconto especial.
+          </p>
+
+          <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
+            <span className="text-gray-400 line-through text-lg sm:text-xl">
+              R$197
+            </span>
+
+            <span className="text-[#F3D19C] text-4xl sm:text-5xl md:text-6xl font-black gold-shimmer animate-glow-text whitespace-nowrap">
+              R$29,90
+            </span>
+          </div>
+
+          {showCTA ? (
+            <div className="animate-bounceIn">
+              <a href="https://go.perfectpay.com.br/PPU38CQ9H61" target="_blank" rel="noopener noreferrer" className="group btn-premium inline-block bg-[#C6862D] hover:bg-[#B77927] text-white font-black text-2xl px-12 py-6 rounded-2xl transition-all duration-300 shadow-2xl hover:scale-105 animate-pulse-scale">
+                LIBERAR MEU ACESSO
+              </a>
+
+              <div className="mt-12 flex flex-col items-center gap-6">
+                <div className="bg-white rounded-3xl p-6 shadow-2xl border border-[#D8B07A]/20 max-w-md w-full">
+                  <div className="flex items-center justify-center mb-4">
+                    <img src="/assets/garantia-30-dias.jpg" alt="Garantia 30 Dias" className="h-28 w-28 object-contain transition duration-300 hover:scale-105" />
+                  </div>
+
+                  <h3 className="text-[#172033] text-2xl font-black mb-2">
+                    Garantia Blindada de 30 Dias
+                  </h3>
+
+                  <p className="text-[#5F6572] leading-relaxed text-base">
+                    Você terá 30 dias completos para acessar o conteúdo. Se não ficar satisfeito, devolvemos 100% do seu dinheiro.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
+                  <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
+                    <MastercardLogo className="h-full w-full object-contain" />
+                  </div>
+                  <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
+                    <VisaLogo className="h-full w-full object-contain" fill="#1A1F71" />
+                  </div>
+                  <div className="bg-white rounded-lg p-1.5 flex items-center justify-center h-9 w-14 shadow-md transition duration-300 hover:scale-105">
+                    <PixLogo className="h-full w-full object-contain" fill="#32BCAD" />
+                  </div>
+                </div>
+
+                <div className="text-[#94A3B8] text-sm">
+                  Pagamento 100% seguro • Garantia de 30 dias
+                </div>
               </div>
             </div>
-          </div>
-        ) : (
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-lg mx-auto transition-all duration-300">
-            <div className="flex justify-center mb-4 text-[#D8B07A] text-3xl animate-pulse">
-              🔒
+          ) : (
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 max-w-lg mx-auto transition-all duration-300">
+              <div className="flex justify-center mb-4 text-[#D8B07A] text-3xl animate-pulse">
+                🔒
+              </div>
+              <h3 className="text-[#F3D19C] text-lg font-bold">Oferta Promocional Reservada</h3>
+              <p className="text-gray-300 text-sm mt-2 leading-relaxed">
+                Assista ao vídeo explicativo acima. O link de liberação com desconto será disponibilizado automaticamente in instantes aqui nesta seção.
+              </p>
+              <div className="mt-4 w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+                <div className="h-full countdown-bar rounded-full" style={{ width: '60%' }}></div>
+              </div>
             </div>
-            <h3 className="text-[#F3D19C] text-lg font-bold">Oferta Promocional Reservada</h3>
-            <p className="text-gray-300 text-sm mt-2 leading-relaxed">
-              Assista ao vídeo explicativo acima. O link de liberação com desconto será disponibilizado automaticamente em instantes aqui nesta seção.
-            </p>
-            <div className="mt-4 w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
-              <div className="h-full countdown-bar rounded-full" style={{ width: '60%' }}></div>
-            </div>
-          </div>
-        )}
-      </div>
-      </section >
+          )}
+        </div>
+      </section>
 
-    {/* FOOTER */ }
-    < footer className = "border-t border-[#1E293B]/60 py-16 px-6 bg-[#061321] text-[#CBD5E1] relative" >
+      {/* FOOTER */}
+      <footer className="border-t border-[#1E293B]/60 py-16 px-6 bg-[#061321] text-[#CBD5E1] relative">
         <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 items-start">
           <div>
             <div className="text-2xl font-black text-white mb-4 font-serif tracking-wide">
@@ -710,8 +702,7 @@ export default function LandingPageBR() {
         <div className="border-t border-[#1E293B]/40 mt-12 pt-8 text-center text-sm text-[#64748B]">
           © 2026 Manuscrito Sagrado • Todos os direitos reservados.
         </div>
-      </footer >
-    </div >
+      </footer>
+    </div>
   );
 }
-
