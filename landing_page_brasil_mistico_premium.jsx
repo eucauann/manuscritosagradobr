@@ -252,30 +252,24 @@ export default function LandingPageBR() {
                   <div className="absolute -right-10 bottom-10 h-32 w-32 rounded-full bg-white/40 blur-3xl animate-pulse" />
                 </div>
 
-                <img
-                  src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1400&auto=format&fit=crop"
-                  alt="Mulher meditando"
-                  className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
-                />
-
-                {videoStarted && (
-                  <vturb-smartplayer id="vid-6a18ecf65045d459043ae0c1" style={{display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px'}}></vturb-smartplayer>
-                )}
-
                 {!videoStarted ? (
-                  <button
-                    onClick={() => setVideoStarted(true)}
-                    className="absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/30 backdrop-blur-sm ring-2 ring-white/60 transition hover:scale-110 sm:h-20 sm:w-20 play-btn-ripple"
-                  >
-                    <div className="ml-1 w-0 h-0 border-t-[12px] border-t-transparent border-l-[18px] border-l-white border-b-[12px] border-b-transparent" />
-                  </button>
+                  <>
+                    <img
+                      src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1400&auto=format&fit=crop"
+                      alt="Mulher meditando"
+                      className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
+                    />
+
+                    <button
+                      onClick={() => setVideoStarted(true)}
+                      className="absolute left-1/2 top-1/2 z-20 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/30 backdrop-blur-sm ring-2 ring-white/60 transition hover:scale-110 sm:h-20 sm:w-20 play-btn-ripple"
+                    >
+                      <div className="ml-1 w-0 h-0 border-t-[12px] border-t-transparent border-l-[18px] border-l-white border-b-[12px] border-b-transparent" />
+                    </button>
+                  </>
                 ) : (
-                  <div className="absolute inset-0 z-20 bg-black/10 backdrop-blur-[2px] flex items-center justify-center pointer-events-none">
-                    <div className="text-white text-center p-4 bg-[#07192E]/80 rounded-2xl mx-4 shadow-2xl border border-white/10 animate-fadeInUp">
-                      <div className="w-10 h-10 border-4 border-t-[#C6862D] border-white/20 rounded-full animate-spin mx-auto mb-3"></div>
-                      <p className="font-bold text-sm">Revelação Iniciada...</p>
-                      <p className="text-[10px] text-gray-300 mt-1">Aproveite a mensagem até o final.</p>
-                    </div>
+                  <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+                    <vturb-smartplayer id="vid-6a18ecf65045d459043ae0c1" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}></vturb-smartplayer>
                   </div>
                 )}
               </div>
